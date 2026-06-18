@@ -1,0 +1,190 @@
+{% extends "base.html" %}
+{% block title %}收银台 - QSM368ZP-WF{% endblock %}
+{% block content %}
+<section class="grid two">
+  <div class="card">
+    <h2>演示流程面板</h2>
+    <div class="demo-steps">
+      <div class="step done">1. 板端 Flask + SQLite 运行</div>
+      <div class="step done">2. 扫码盒识别商品条码</div>
+      <div class="step done">3. 自动加入购物车并计价</div>
+      <div class="step done">4. 摄像头拍照采集商品图像</div>
+      <div class="step">5. 条码失败时启用外观识别兜底</div>
+      <div class="step">6. 语音/文本命令查询、删除、结账</div>
+      <div class="step">7. 生成支付二维码并模拟支付</div>
+      <div class="step">8. 后台查看订单、识别日志、测试指标</div>
+    </div>
+  </div>
+
+  <div class="card kpis">
+    <div class="kpi"><span>购物车件数</span><b>{{ metrics.cart_count }}</b></div>
+    <div class="kpi"><span>总价</span><b>{{ total|money }}</b></div>
+    <div class="kpi"><span>扫码成功率</span><b>{{ metrics.barcode_rate }}%</b></div>
+    <div class="kpi"><span>订单数</span><b>{{ metrics.orders_count }}</b></div>
+  </div>
+</section>
+
+<section class="grid two">
+  <div class="card">
+    <h2>扫码盒 / 扫码枪工作台</h2>
+    <form action="{{ url_for('scan') }}" method="post" class="scanner-form">
+      <input id="barcodeInput" name="barcode" autocomplete="off"
+             placeholder="把光标放这里，扫码盒扫码后会自动输入并回车；也可手动输入 690000000001">
+      <button type="submit">扫码加入</button>
+    </form>
+    <p class="hint">建议扫码盒设置为 USB 键盘口 + 添加回车结束符。同一条码 {{ 1.8 }} 秒内会被拦截，防止重复加购。</p>
+    <div class="chips">
+      <span>一键模拟扫码：</span>
+      {% for p in products[:6] %}
+      <form action="{{ url_for('scan') }}" method="post" class="inline">
+        <input type="hidden" name="barcode" value="{{ p.barcode }}">
+        <button class="chip" type="submit">{{ p.short_name }} {{ p.barcode }}</button>
+      </form>
+      {% endfor %}
+    </div>
+
+    <hr>
+    <h3>真实商品条码绑定</h3>
+    <form action="{{ url_for('bind_barcode') }}" method="post" class="bind-form">
+      <input name="barcode" placeholder="真实商品条码，例如 6954767474670">
+      <select name="product_id">
+        {% for p in products %}
+        <option value="{{ p.product_id }}">{{ p.product_id }} - {{ p.product_name }}</option>
+        {% endfor %}
+      </select>
+      <button type="submit">绑定条码</button>
+    </form>
+
+    <h3>最近识别记录</h3>
+    <table>
+      <thead><tr><th>时间</th><th>类型</th><th>条码/图片</th><th>结果</th><th>耗时</th></tr></thead>
+      <tbody>
+      {% for r in recent_scans %}
+        <tr>
+          <td>{{ r.timestamp }}</td>
+          <td><span class="tag">{{ r.recognition_type }}</span></td>
+          <td>{{ r.raw_code or r.image_path or '-' }}</td>
+          <td>{% if r.success %}✅ {{ r.product_name or '成功' }}{% else %}❌ {{ r.error_reason }}{% endif %}</td>
+          <td>{{ r.latency_ms or 0 }} ms</td>
+        </tr>
+      {% else %}
+        <tr><td colspan="5">暂无识别记录</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card cart-card">
+    <h2>购物车</h2>
+    {% if cart_items %}
+    <table>
+      <thead><tr><th>商品</th><th>单价</th><th>数量</th><th>小计</th><th>操作</th></tr></thead>
+      <tbody>
+        {% for item in cart_items %}
+        <tr>
+          <td>{{ item.product_name }}</td>
+          <td>{{ item.unit_price_cent|money }}</td>
+          <td>{{ item.quantity }}</td>
+          <td>{{ item.subtotal_cent|money }}</td>
+          <td>
+            <form action="{{ url_for('route_remove_product', product_id=item.product_id) }}" method="post">
+              <button class="small">删除一件</button>
+            </form>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+      <p class="empty">购物车为空</p>
+    {% endif %}
+    <div class="total">总价：{{ total|money }}</div>
+    <div class="actions">
+      <form action="{{ url_for('checkout') }}" method="post"><button class="primary">结账生成二维码</button></form>
+      <form action="{{ url_for('route_clear_cart') }}" method="post"><button>清空购物车</button></form>
+      <form action="{{ url_for('route_remove_last') }}" method="post"><button>删除上一件</button></form>
+    </div>
+  </div>
+</section>
+
+<section class="grid two">
+  <div class="card">
+    <h2>摄像头采集与外观识别兜底</h2>
+    <div class="actions">
+      <form action="{{ url_for('capture') }}" method="post"><button class="primary">拍照采集</button></form>
+    </div>
+    {% if latest_capture %}
+      <div class="capture-box"><img src="{{ url_for('static', filename=latest_capture) }}" alt="latest capture"></div>
+    {% else %}
+      <div class="placeholder">暂无采集图像</div>
+    {% endif %}
+    <hr>
+    <h3>外观识别兜底演示</h3>
+    <p class="hint">当条码不可见、损坏或未录入时，使用摄像头采集图片并进入外观识别兜底；当前先用可控演示模块输出商品、置信度和耗时。</p>
+    <form action="{{ url_for('vision_fallback') }}" method="post" class="bind-form">
+      <select name="product_id">
+        {% for p in products %}
+        <option value="{{ p.product_id }}">{{ p.product_id }} - {{ p.product_name }}</option>
+        {% endfor %}
+      </select>
+      <select name="confidence">
+        <option value="0.88">高置信度 0.88：自动加入购物车</option>
+        <option value="0.66">中置信度 0.66：提示人工确认</option>
+        <option value="0.42">低置信度 0.42：拦截失败</option>
+      </select>
+      <button type="submit">运行兜底识别</button>
+    </form>
+  </div>
+
+  <div class="card">
+    <h2>语音 / 文本命令模拟</h2>
+    <form action="{{ url_for('voice') }}" method="post" class="scanner-form">
+      <input name="text" placeholder="一共多少钱 / 删除上一件 / 清空购物车 / 我要结账 / 拍照">
+      <button type="submit">执行命令</button>
+    </form>
+    <div class="chips">
+      {% for cmd in ['一共多少钱','删除上一件','清空购物车','我要结账','拍照','可乐多少钱'] %}
+      <form action="{{ url_for('voice') }}" method="post" class="inline">
+        <input type="hidden" name="text" value="{{ cmd }}">
+        <button class="chip" type="submit">{{ cmd }}</button>
+      </form>
+      {% endfor %}
+    </div>
+    <hr>
+    <h3>最近订单</h3>
+    <table>
+      <thead><tr><th>订单</th><th>金额</th><th>状态</th><th>时间</th></tr></thead>
+      <tbody>
+      {% for o in recent_orders %}
+        <tr><td>{{ o.order_id }}</td><td>{{ o.total_price_cent|money }}</td><td>{{ o.payment_status }}</td><td>{{ o.created_at }}</td></tr>
+      {% else %}
+        <tr><td colspan="4">暂无订单</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card">
+  <h2>商品库</h2>
+  <div class="products">
+    {% for p in products %}
+    <div class="product">
+      <div class="sku">{{ p.product_id }} / 条码：{{ p.all_barcodes or p.barcode }}</div>
+      <b>{{ p.product_name }}</b>
+      <p>{{ p.category }} · {{ p.price_cent|money }} · 库存 {{ p.stock }}</p>
+      <form action="{{ url_for('route_add_product', product_id=p.product_id) }}" method="post"><button>加入购物车</button></form>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener("visibilitychange", () => {
+  const scanner = document.getElementById("barcodeInput");
+  if(!document.hidden && scanner){ scanner.focus(); }
+});
+</script>
+{% endblock %}

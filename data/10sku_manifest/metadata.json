@@ -1,0 +1,1116 @@
+{
+  "source_zip": "c:\\Users\\MR\\Documents\\xwechat_files\\wxid_bgjjhqsjj6io22_6c97\\msg\\file\\2026-06\\图像识别.zip",
+  "product_count": 10,
+  "image_count": 117,
+  "low_sample_warning": "Current data is suitable for a baseline flow test only; recommended 40-60 images per SKU.",
+  "products": [
+    {
+      "product_id": "SKU001",
+      "product_name": "三元酸奶",
+      "barcode": "6921355232318",
+      "price_cent": 100,
+      "category": "乳制品",
+      "image_count": 12,
+      "train_enabled": true,
+      "notes": "TODO_USER_CONFIRM_PRICE;baseline_low_sample_count;below_recommended_40_60_images",
+      "source_dir": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\三元酸奶 6921355232318",
+      "min_width": 3072,
+      "min_height": 4096,
+      "max_width": 3072,
+      "max_height": 4096,
+      "total_bytes": 32460503,
+      "broken_images": 0
+    },
+    {
+      "product_id": "SKU002",
+      "product_name": "上海硫磺皂",
+      "barcode": "6901404300854",
+      "price_cent": 100,
+      "category": "日用品",
+      "image_count": 9,
+      "train_enabled": true,
+      "notes": "TODO_USER_CONFIRM_PRICE;baseline_low_sample_count;below_recommended_40_60_images",
+      "source_dir": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\上海硫磺皂 6901404300854",
+      "min_width": 3072,
+      "min_height": 4096,
+      "max_width": 3072,
+      "max_height": 4096,
+      "total_bytes": 29449178,
+      "broken_images": 0
+    },
+    {
+      "product_id": "SKU003",
+      "product_name": "冠益乳",
+      "barcode": "6934665096747",
+      "price_cent": 100,
+      "category": "乳制品",
+      "image_count": 11,
+      "train_enabled": true,
+      "notes": "TODO_USER_CONFIRM_PRICE;baseline_low_sample_count;below_recommended_40_60_images",
+      "source_dir": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\冠益乳 6934665096747",
+      "min_width": 3072,
+      "min_height": 4096,
+      "max_width": 3072,
+      "max_height": 4096,
+      "total_bytes": 37055389,
+      "broken_images": 0
+    },
+    {
+      "product_id": "SKU004",
+      "product_name": "燕麦代餐棒",
+      "barcode": "6974698890110",
+      "price_cent": 100,
+      "category": "食品",
+      "image_count": 9,
+      "train_enabled": true,
+      "notes": "TODO_USER_CONFIRM_PRICE;baseline_low_sample_count;below_recommended_40_60_images",
+      "source_dir": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\燕麦代餐棒 6974698890110",
+      "min_width": 4096,
+      "min_height": 3072,
+      "max_width": 4096,
+      "max_height": 3072,
+      "total_bytes": 30170337,
+      "broken_images": 0
+    },
+    {
+      "product_id": "SKU005",
+      "product_name": "立顿乌龙茶固体饮料",
+      "barcode": "6902088923193",
+      "price_cent": 100,
+      "category": "冲调饮品",
+      "image_count": 10,
+      "train_enabled": true,
+      "notes": "TODO_USER_CONFIRM_PRICE;baseline_low_sample_count;below_recommended_40_60_images",
+      "source_dir": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\立顿乌龙茶固体饮料 6902088923193",
+      "min_width": 3072,
+      "min_height": 3072,
+      "max_width": 4096,
+      "max_height": 4096,
+      "total_bytes": 37661513,
+      "broken_images": 0
+    },
+    {
+      "product_id": "SKU006",
+      "product_name": "纳美科学牙膏",
+      "barcode": "6933179230234",
+      "price_cent": 100,
+      "category": "日用品",
+      "image_count": 9,
+      "train_enabled": true,
+      "notes": "TODO_USER_CONFIRM_PRICE;baseline_low_sample_count;below_recommended_40_60_images",
+      "source_dir": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\纳美科学牙膏 6933179230234",
+      "min_width": 4096,
+      "min_height": 3072,
+      "max_width": 4096,
+      "max_height": 3072,
+      "total_bytes": 32311466,
+      "broken_images": 0
+    },
+    {
+      "product_id": "SKU007",
+      "product_name": "绿豆糕",
+      "barcode": "6957310419210",
+      "price_cent": 100,
+      "category": "糕点",
+      "image_count": 13,
+      "train_enabled": true,
+      "notes": "TODO_USER_CONFIRM_PRICE;baseline_low_sample_count;below_recommended_40_60_images",
+      "source_dir": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\绿豆糕 6957310419210",
+      "min_width": 3072,
+      "min_height": 3072,
+      "max_width": 4096,
+      "max_height": 4096,
+      "total_bytes": 53922510,
+      "broken_images": 0
+    },
+    {
+      "product_id": "SKU008",
+      "product_name": "西红柿方便面",
+      "barcode": "6903252074529",
+      "price_cent": 100,
+      "category": "主食",
+      "image_count": 11,
+      "train_enabled": true,
+      "notes": "TODO_USER_CONFIRM_PRICE;baseline_low_sample_count;below_recommended_40_60_images",
+      "source_dir": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\西红柿方便面 6903252074529",
+      "min_width": 4096,
+      "min_height": 3072,
+      "max_width": 4096,
+      "max_height": 3072,
+      "total_bytes": 34876921,
+      "broken_images": 0
+    },
+    {
+      "product_id": "SKU009",
+      "product_name": "魔爪",
+      "barcode": "6974497110167",
+      "price_cent": 100,
+      "category": "饮料",
+      "image_count": 13,
+      "train_enabled": true,
+      "notes": "TODO_USER_CONFIRM_PRICE;baseline_low_sample_count;below_recommended_40_60_images",
+      "source_dir": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\魔爪 6974497110167",
+      "min_width": 3072,
+      "min_height": 3072,
+      "max_width": 4096,
+      "max_height": 4096,
+      "total_bytes": 47486510,
+      "broken_images": 0
+    },
+    {
+      "product_id": "SKU010",
+      "product_name": "鱼油胶囊",
+      "barcode": "6959563502710",
+      "price_cent": 100,
+      "category": "营养品",
+      "image_count": 20,
+      "train_enabled": true,
+      "notes": "TODO_USER_CONFIRM_PRICE;baseline_low_sample_count",
+      "source_dir": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\鱼油胶囊 6959563502710",
+      "min_width": 3072,
+      "min_height": 4096,
+      "max_width": 3072,
+      "max_height": 4096,
+      "total_bytes": 60701052,
+      "broken_images": 0
+    }
+  ],
+  "files": [
+    {
+      "product_id": "SKU001",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\三元酸奶 6921355232318\\IMG_20260609_222029.jpg",
+      "dest": "dataset_raw_v260\\SKU001\\images\\SKU001_001.jpg",
+      "sha256": "732a428a8fdffe3a3a0caba35170e49d7add7a52d295c5a231eeb276bd3fa75d",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU001",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\三元酸奶 6921355232318\\IMG_20260609_222032.jpg",
+      "dest": "dataset_raw_v260\\SKU001\\images\\SKU001_002.jpg",
+      "sha256": "66a7c1250efab4a03f72d35ab3c52a28b1b9338000c3062256df60a79508f622",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU001",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\三元酸奶 6921355232318\\IMG_20260609_222035.jpg",
+      "dest": "dataset_raw_v260\\SKU001\\images\\SKU001_003.jpg",
+      "sha256": "e25dbc59da8e9bbcd601c8842c60dc3b4cae3abd929679aca8f7276b2285258d",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU001",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\三元酸奶 6921355232318\\IMG_20260609_222038.jpg",
+      "dest": "dataset_raw_v260\\SKU001\\images\\SKU001_004.jpg",
+      "sha256": "97ac25ad3942fff99e13bd58b349e7962fb1801a502bb0843f61add319b2dd67",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU001",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\三元酸奶 6921355232318\\IMG_20260609_222040.jpg",
+      "dest": "dataset_raw_v260\\SKU001\\images\\SKU001_005.jpg",
+      "sha256": "8e5ef1908af2e20792750714a0459cc5533e1db8a72f32f1bc0e87c051aa31a8",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU001",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\三元酸奶 6921355232318\\IMG_20260609_222043.jpg",
+      "dest": "dataset_raw_v260\\SKU001\\images\\SKU001_006.jpg",
+      "sha256": "cc78bff05b8de54cff7c24c8c2a629595d2fb0d5e2153cab77f67de5a83aabbe",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU001",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\三元酸奶 6921355232318\\IMG_20260609_222045.jpg",
+      "dest": "dataset_raw_v260\\SKU001\\images\\SKU001_007.jpg",
+      "sha256": "2e9b1f22004c21278fd18081d51271815c36b6bc7b6165e842d7dcfef368e02a",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU001",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\三元酸奶 6921355232318\\IMG_20260609_222049.jpg",
+      "dest": "dataset_raw_v260\\SKU001\\images\\SKU001_008.jpg",
+      "sha256": "92177afe566d54c535ba06975c14271f5f8a342e13845fc4d2e4d60d35d2b3c3",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU001",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\三元酸奶 6921355232318\\IMG_20260609_222052.jpg",
+      "dest": "dataset_raw_v260\\SKU001\\images\\SKU001_009.jpg",
+      "sha256": "fab17f3415966cb6b07f1f55229e2d0c2e55b6444c054b14a76879dd34b49051",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU001",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\三元酸奶 6921355232318\\IMG_20260609_222054.jpg",
+      "dest": "dataset_raw_v260\\SKU001\\images\\SKU001_010.jpg",
+      "sha256": "ed414ee178b6e06f9296b647b766b4f8d9242601b5ba898d60fa67e4b1496075",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU001",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\三元酸奶 6921355232318\\IMG_20260609_222057.jpg",
+      "dest": "dataset_raw_v260\\SKU001\\images\\SKU001_011.jpg",
+      "sha256": "7a6ac6c2a6933fe99f34c2a66a16c7c7ccc0697f3c97a2057191cb8ebc259219",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU001",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\三元酸奶 6921355232318\\IMG_20260609_222059.jpg",
+      "dest": "dataset_raw_v260\\SKU001\\images\\SKU001_012.jpg",
+      "sha256": "4965fa63bf9c87ea412edbce681d9919ceeda6379c32ca8633e9ffe3c91d6c24",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU002",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\上海硫磺皂 6901404300854\\IMG_20260609_222538.jpg",
+      "dest": "dataset_raw_v260\\SKU002\\images\\SKU002_001.jpg",
+      "sha256": "62248b2d5c8e1db2d6e77a6be391220bbe8c1282045c4d06cdeb61d54394c4e0",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU002",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\上海硫磺皂 6901404300854\\IMG_20260609_222542.jpg",
+      "dest": "dataset_raw_v260\\SKU002\\images\\SKU002_002.jpg",
+      "sha256": "1b25d3c29a4b7691281de43360fbe834ba2b55945f5e0c3feed142a70bf1a131",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU002",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\上海硫磺皂 6901404300854\\IMG_20260609_222545.jpg",
+      "dest": "dataset_raw_v260\\SKU002\\images\\SKU002_003.jpg",
+      "sha256": "6dcf4d7072cc80c997fa4ea646fbcf3368490fd8c935ca138407e5fb96244cdd",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU002",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\上海硫磺皂 6901404300854\\IMG_20260609_222546.jpg",
+      "dest": "dataset_raw_v260\\SKU002\\images\\SKU002_004.jpg",
+      "sha256": "8059fef9d0c2ea871e12d739a4063c124e1b64d4413e7d02eda29cc17099812b",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU002",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\上海硫磺皂 6901404300854\\IMG_20260609_222548.jpg",
+      "dest": "dataset_raw_v260\\SKU002\\images\\SKU002_005.jpg",
+      "sha256": "367c42f260cf189379f051c5c7e425d5d7122816fe83d0a8f5bfe87980160456",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU002",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\上海硫磺皂 6901404300854\\IMG_20260609_222550.jpg",
+      "dest": "dataset_raw_v260\\SKU002\\images\\SKU002_006.jpg",
+      "sha256": "5b825e8c7fc24177f07e7514d0513c99eefe425bb3988a4726bbf89adedbe1ca",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU002",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\上海硫磺皂 6901404300854\\IMG_20260609_222551.jpg",
+      "dest": "dataset_raw_v260\\SKU002\\images\\SKU002_007.jpg",
+      "sha256": "896e8d0754a41423c27215aa39119dea424ac4def608810800b5bf8b66db0633",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU002",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\上海硫磺皂 6901404300854\\IMG_20260609_222552.jpg",
+      "dest": "dataset_raw_v260\\SKU002\\images\\SKU002_008.jpg",
+      "sha256": "ee2abc6cdf48bef848bc349441369321a2c9e8059fed59cae122ef98c26dec74",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU002",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\上海硫磺皂 6901404300854\\IMG_20260609_222554.jpg",
+      "dest": "dataset_raw_v260\\SKU002\\images\\SKU002_009.jpg",
+      "sha256": "59c9417d4e220e1e3377e9950c496c02ef8c8ab9efc72d8eb549da5ab47b38de",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU003",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\冠益乳 6934665096747\\IMG_20260609_222749.jpg",
+      "dest": "dataset_raw_v260\\SKU003\\images\\SKU003_001.jpg",
+      "sha256": "3e8e2e57a6e8836624d79caa707757c422facfe4422ee37f5bfcbb75adf74b34",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU003",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\冠益乳 6934665096747\\IMG_20260609_222754.jpg",
+      "dest": "dataset_raw_v260\\SKU003\\images\\SKU003_002.jpg",
+      "sha256": "4a5605d26d7bc9fbe958669f566ed44c686d9ca06795dbc066b96f61bc2e9325",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU003",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\冠益乳 6934665096747\\IMG_20260609_222757.jpg",
+      "dest": "dataset_raw_v260\\SKU003\\images\\SKU003_003.jpg",
+      "sha256": "5f07cf2b78893ebf1f09fbb64c65e44ea57db99219de747cd6dc7af81ae28fd7",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU003",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\冠益乳 6934665096747\\IMG_20260609_222800.jpg",
+      "dest": "dataset_raw_v260\\SKU003\\images\\SKU003_004.jpg",
+      "sha256": "15c205a62a621667d9f890bc903307b0220239ffd14a4d4825989f366f07eb7c",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU003",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\冠益乳 6934665096747\\IMG_20260609_222803.jpg",
+      "dest": "dataset_raw_v260\\SKU003\\images\\SKU003_005.jpg",
+      "sha256": "d2a487d00c0d2a90e29fbec3967de47669913189f8267c1c65900cc502f03526",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU003",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\冠益乳 6934665096747\\IMG_20260609_222804.jpg",
+      "dest": "dataset_raw_v260\\SKU003\\images\\SKU003_006.jpg",
+      "sha256": "42b97ad1d036d1f605fb53902dfed36cad8ac784150e71a745c831e5f0cc9283",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU003",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\冠益乳 6934665096747\\IMG_20260609_222806.jpg",
+      "dest": "dataset_raw_v260\\SKU003\\images\\SKU003_007.jpg",
+      "sha256": "2177fb649b091221b40cafca886694d2f90cade9a2cb06c5ae90bad508f1e0bb",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU003",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\冠益乳 6934665096747\\IMG_20260609_222808.jpg",
+      "dest": "dataset_raw_v260\\SKU003\\images\\SKU003_008.jpg",
+      "sha256": "187e9bf422f1135df3536c9df636543034ec082720f13f97b0b8e997187d4e40",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU003",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\冠益乳 6934665096747\\IMG_20260609_222810.jpg",
+      "dest": "dataset_raw_v260\\SKU003\\images\\SKU003_009.jpg",
+      "sha256": "6f79578193c85d8b3e131f0ffc53301698488fb42a5d5d2281e68a23613ba44b",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU003",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\冠益乳 6934665096747\\IMG_20260609_222811.jpg",
+      "dest": "dataset_raw_v260\\SKU003\\images\\SKU003_010.jpg",
+      "sha256": "70552d555f36d4864e84d06084db0390179a74dfe2e752c468e8682f0c38b20e",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU003",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\冠益乳 6934665096747\\IMG_20260609_222812.jpg",
+      "dest": "dataset_raw_v260\\SKU003\\images\\SKU003_011.jpg",
+      "sha256": "4eacc0d06d34edd57b03e48f23dc1d869b780136a3f418e06a3dd30d537a8266",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU004",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\燕麦代餐棒 6974698890110\\IMG_20260609_222641.jpg",
+      "dest": "dataset_raw_v260\\SKU004\\images\\SKU004_001.jpg",
+      "sha256": "7fecfdd3f3242e80ffc4c4ed3ff2eb1f318feb06120672123d266dfd624fa835",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU004",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\燕麦代餐棒 6974698890110\\IMG_20260609_222646.jpg",
+      "dest": "dataset_raw_v260\\SKU004\\images\\SKU004_002.jpg",
+      "sha256": "4aad514afe575a8a5806a564a2464ae3233d825c72e87080b2d7b8aa613886b9",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU004",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\燕麦代餐棒 6974698890110\\IMG_20260609_222703.jpg",
+      "dest": "dataset_raw_v260\\SKU004\\images\\SKU004_003.jpg",
+      "sha256": "59deaf0d3a0ed24541576ce56a79a084465aa026bf92f385685dfb00675a8c26",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU004",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\燕麦代餐棒 6974698890110\\IMG_20260609_222705.jpg",
+      "dest": "dataset_raw_v260\\SKU004\\images\\SKU004_004.jpg",
+      "sha256": "0cb3df575f46900be1184e769db11766b59538ade42b5937ff6bfea9eaa8585e",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU004",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\燕麦代餐棒 6974698890110\\IMG_20260609_222707.jpg",
+      "dest": "dataset_raw_v260\\SKU004\\images\\SKU004_005.jpg",
+      "sha256": "d796d504cabc6db5dbfeacb94744d131667064e5a630a429bc3e17154ad5b78f",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU004",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\燕麦代餐棒 6974698890110\\IMG_20260609_222708.jpg",
+      "dest": "dataset_raw_v260\\SKU004\\images\\SKU004_006.jpg",
+      "sha256": "86b46c8ff245577ace6ba3868b6860b964a9eaf4daf562075744cb5129309410",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU004",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\燕麦代餐棒 6974698890110\\IMG_20260609_222710.jpg",
+      "dest": "dataset_raw_v260\\SKU004\\images\\SKU004_007.jpg",
+      "sha256": "b7f42275d942322d3f3c6a32c42125358df4054108b95f1457fc525cea2988a5",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU004",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\燕麦代餐棒 6974698890110\\IMG_20260609_222711.jpg",
+      "dest": "dataset_raw_v260\\SKU004\\images\\SKU004_008.jpg",
+      "sha256": "dabcf64f5f126f893e2cb2361cfd1c3577683c7429e8d8095e609a7f2acdd8b4",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU004",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\燕麦代餐棒 6974698890110\\IMG_20260609_222713.jpg",
+      "dest": "dataset_raw_v260\\SKU004\\images\\SKU004_009.jpg",
+      "sha256": "17bc73fe5b8dcaa419e2d6ae05896d91cd1f523e997313e5ce449e3b0ffe5c4c",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU005",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\立顿乌龙茶固体饮料 6902088923193\\IMG_20260609_222254.jpg",
+      "dest": "dataset_raw_v260\\SKU005\\images\\SKU005_001.jpg",
+      "sha256": "b3b918d36a9d85c25eb47e0ebb88669aeafe9dd2764150baf61c5825f1e04db0",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU005",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\立顿乌龙茶固体饮料 6902088923193\\IMG_20260609_222302.jpg",
+      "dest": "dataset_raw_v260\\SKU005\\images\\SKU005_002.jpg",
+      "sha256": "6046e03e49292665edb23b79bcb8f8aeb8629568f234298cd73ed7dc4091ec24",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU005",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\立顿乌龙茶固体饮料 6902088923193\\IMG_20260609_222307.jpg",
+      "dest": "dataset_raw_v260\\SKU005\\images\\SKU005_003.jpg",
+      "sha256": "e717f8f89e3e9e2f36f343a9b6fe620945623729ae01244cac71e7003e2790b4",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU005",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\立顿乌龙茶固体饮料 6902088923193\\IMG_20260609_222309.jpg",
+      "dest": "dataset_raw_v260\\SKU005\\images\\SKU005_004.jpg",
+      "sha256": "6f19235b1288686114a89cbe0cb6637d33bbaf5a0f993275adcb7441c76f9c51",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU005",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\立顿乌龙茶固体饮料 6902088923193\\IMG_20260609_222311.jpg",
+      "dest": "dataset_raw_v260\\SKU005\\images\\SKU005_005.jpg",
+      "sha256": "eca7df18febd7271998390768eb99e642be8563406ccbba5675dd438a9361cfd",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU005",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\立顿乌龙茶固体饮料 6902088923193\\IMG_20260609_222313.jpg",
+      "dest": "dataset_raw_v260\\SKU005\\images\\SKU005_006.jpg",
+      "sha256": "543cbf9ba792336c5acd20b2cc799cde7a3bd2502b0c23846457483d9a295d7d",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU005",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\立顿乌龙茶固体饮料 6902088923193\\IMG_20260609_222315.jpg",
+      "dest": "dataset_raw_v260\\SKU005\\images\\SKU005_007.jpg",
+      "sha256": "fe69519e1c3b88324c75ff7aeffd429c54bee453881fa9474949b8b4b812a8ed",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU005",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\立顿乌龙茶固体饮料 6902088923193\\IMG_20260609_222318.jpg",
+      "dest": "dataset_raw_v260\\SKU005\\images\\SKU005_008.jpg",
+      "sha256": "b60db8917a8149cdf7d8e257ec6c00e0f9ac84b8456b2964bf1bfb96b71e421e",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU005",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\立顿乌龙茶固体饮料 6902088923193\\IMG_20260609_222320.jpg",
+      "dest": "dataset_raw_v260\\SKU005\\images\\SKU005_009.jpg",
+      "sha256": "5eab53ae00620ea6ac2c543168d784adf8a09a499d2b6af80d7c3ca632fa38d8",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU005",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\立顿乌龙茶固体饮料 6902088923193\\IMG_20260609_222322.jpg",
+      "dest": "dataset_raw_v260\\SKU005\\images\\SKU005_010.jpg",
+      "sha256": "57e91bcddbd359ecc939c9e19365a86d907a10e38933a8b051da3c2d37829728",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU006",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\纳美科学牙膏 6933179230234\\IMG_20260609_222426.jpg",
+      "dest": "dataset_raw_v260\\SKU006\\images\\SKU006_001.jpg",
+      "sha256": "8127c4a26cd1823b32f7cb612b7fc538dc40d55cb3a0121c249f530f2cf99a19",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU006",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\纳美科学牙膏 6933179230234\\IMG_20260609_222429.jpg",
+      "dest": "dataset_raw_v260\\SKU006\\images\\SKU006_002.jpg",
+      "sha256": "98ee925856f2e3a7cc2871c4b494c1a79804275f0e3df32af7bae31513c1c0bd",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU006",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\纳美科学牙膏 6933179230234\\IMG_20260609_222432.jpg",
+      "dest": "dataset_raw_v260\\SKU006\\images\\SKU006_003.jpg",
+      "sha256": "9f8c5ac17340370b572d7c93bc2a2393f435dbc48fe4183b3448a03a9de5d283",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU006",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\纳美科学牙膏 6933179230234\\IMG_20260609_222435.jpg",
+      "dest": "dataset_raw_v260\\SKU006\\images\\SKU006_004.jpg",
+      "sha256": "701f97217c298ff4175651a45fda13b844def7c4c31ad4f4bc10317bbd50c2ad",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU006",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\纳美科学牙膏 6933179230234\\IMG_20260609_222437.jpg",
+      "dest": "dataset_raw_v260\\SKU006\\images\\SKU006_005.jpg",
+      "sha256": "9ad3d276047e643c87b6b3b229cc6ae110660310110356e379dfab5a46ac935b",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU006",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\纳美科学牙膏 6933179230234\\IMG_20260609_222444.jpg",
+      "dest": "dataset_raw_v260\\SKU006\\images\\SKU006_006.jpg",
+      "sha256": "45cff3ad4d8948f47581d63d1ab17aca98a111cd11aa4652d3a84c55939ff392",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU006",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\纳美科学牙膏 6933179230234\\IMG_20260609_222447.jpg",
+      "dest": "dataset_raw_v260\\SKU006\\images\\SKU006_007.jpg",
+      "sha256": "d59de56faa36268f3c35cf47857aa699301720190e56a19329c101dc36b63e0f",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU006",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\纳美科学牙膏 6933179230234\\IMG_20260609_222449.jpg",
+      "dest": "dataset_raw_v260\\SKU006\\images\\SKU006_008.jpg",
+      "sha256": "83c7adc5f643b74087a049b0fe400ffd915faeaf19b62c5fce9186d2ec0d0293",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU006",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\纳美科学牙膏 6933179230234\\IMG_20260609_222451.jpg",
+      "dest": "dataset_raw_v260\\SKU006\\images\\SKU006_009.jpg",
+      "sha256": "1ae0988c86222b24085ae2c2bc62bae5062eae30a860540b3e06e23be292de18",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU007",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\绿豆糕 6957310419210\\IMG_20260609_221843.jpg",
+      "dest": "dataset_raw_v260\\SKU007\\images\\SKU007_001.jpg",
+      "sha256": "91ab47a0adb017c0b835db995d049684de3656fbc1293af973ba57e90466102d",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU007",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\绿豆糕 6957310419210\\IMG_20260609_221847.jpg",
+      "dest": "dataset_raw_v260\\SKU007\\images\\SKU007_002.jpg",
+      "sha256": "2e5112bdf1df0824b853264f8b85656efd1475cf90b5631cecdd988deb792302",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU007",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\绿豆糕 6957310419210\\IMG_20260609_221850.jpg",
+      "dest": "dataset_raw_v260\\SKU007\\images\\SKU007_003.jpg",
+      "sha256": "acf657f663ce7aab99a5a6d74be59541efa39b9cdedea4feb13c967d05de52bf",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU007",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\绿豆糕 6957310419210\\IMG_20260609_221854.jpg",
+      "dest": "dataset_raw_v260\\SKU007\\images\\SKU007_004.jpg",
+      "sha256": "f2e17b85f271a62720a5d1288b2b2ba17ddcea3a98c8d4adcd717bb04c5cc51e",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU007",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\绿豆糕 6957310419210\\IMG_20260609_221859.jpg",
+      "dest": "dataset_raw_v260\\SKU007\\images\\SKU007_005.jpg",
+      "sha256": "226ec2d8451680da60db6a5abd4818d435524af3b77cdea92396e61798d7fd5f",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU007",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\绿豆糕 6957310419210\\IMG_20260609_221903.jpg",
+      "dest": "dataset_raw_v260\\SKU007\\images\\SKU007_006.jpg",
+      "sha256": "d1e46bb1df81563dec393e98aae55cde2d113021c7e92cf18cb2f9fc3813b9a6",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU007",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\绿豆糕 6957310419210\\IMG_20260609_221906.jpg",
+      "dest": "dataset_raw_v260\\SKU007\\images\\SKU007_007.jpg",
+      "sha256": "12b13ce63d2ad927441815bf79b6e91a49c76de5cad79be57f5223caa429ddca",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU007",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\绿豆糕 6957310419210\\IMG_20260609_221911.jpg",
+      "dest": "dataset_raw_v260\\SKU007\\images\\SKU007_008.jpg",
+      "sha256": "78c89838b9fbcc0e0b301d26384827b5fd889905a39d932e3795f122e52ddd55",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU007",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\绿豆糕 6957310419210\\IMG_20260609_221914.jpg",
+      "dest": "dataset_raw_v260\\SKU007\\images\\SKU007_009.jpg",
+      "sha256": "6ce5ed57605cfb4870b7be14c1603da1facd6017afc0e6d3a4cf994eefe6bf7b",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU007",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\绿豆糕 6957310419210\\IMG_20260609_221917.jpg",
+      "dest": "dataset_raw_v260\\SKU007\\images\\SKU007_010.jpg",
+      "sha256": "2d7cd82d63a8344c11df78711057a6eb6441e06bd84f76d49b81808d26c646c5",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU007",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\绿豆糕 6957310419210\\IMG_20260609_221920.jpg",
+      "dest": "dataset_raw_v260\\SKU007\\images\\SKU007_011.jpg",
+      "sha256": "31324173d93a8cd2bbdb6038d5929512f7a94575bac2a919bd75733c926e0030",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU007",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\绿豆糕 6957310419210\\IMG_20260609_221924.jpg",
+      "dest": "dataset_raw_v260\\SKU007\\images\\SKU007_012.jpg",
+      "sha256": "ff6e03dd56ac2db827bbdbd404a935dc1a26dfc08886cee736b597dbcfb83917",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU007",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\绿豆糕 6957310419210\\IMG_20260609_221925.jpg",
+      "dest": "dataset_raw_v260\\SKU007\\images\\SKU007_013.jpg",
+      "sha256": "96dd4ce02df0ccc4b37de06cd2a625c7756630dd4d0b9bdfc4b179168ec769e2",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU008",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\西红柿方便面 6903252074529\\IMG_20260609_222145.jpg",
+      "dest": "dataset_raw_v260\\SKU008\\images\\SKU008_001.jpg",
+      "sha256": "7b150125c03071182ef6a7423da3b011177c26a5fe0abc812ea013dd4d6e8b34",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU008",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\西红柿方便面 6903252074529\\IMG_20260609_222154.jpg",
+      "dest": "dataset_raw_v260\\SKU008\\images\\SKU008_002.jpg",
+      "sha256": "0c0e72dd599ed09f1491fbdfd252f38344eb575ccf39f1e0a3723e9c2833c802",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU008",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\西红柿方便面 6903252074529\\IMG_20260609_222156.jpg",
+      "dest": "dataset_raw_v260\\SKU008\\images\\SKU008_003.jpg",
+      "sha256": "f9b8360ff0ee073e2a384429cc0a485554aa95d045899bec5bf8a060794f1ed0",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU008",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\西红柿方便面 6903252074529\\IMG_20260609_222158.jpg",
+      "dest": "dataset_raw_v260\\SKU008\\images\\SKU008_004.jpg",
+      "sha256": "ebaae7797960491647322f27d9bf538a68fb9abf17027620dcdf7860e678db1b",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU008",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\西红柿方便面 6903252074529\\IMG_20260609_222200.jpg",
+      "dest": "dataset_raw_v260\\SKU008\\images\\SKU008_005.jpg",
+      "sha256": "5cf7eabe71d90ee5b03c0045f4d2e115ceb6ab03e7db6c6ec9d2ee370bb8ca76",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU008",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\西红柿方便面 6903252074529\\IMG_20260609_222202.jpg",
+      "dest": "dataset_raw_v260\\SKU008\\images\\SKU008_006.jpg",
+      "sha256": "7c18ac5a921aab697cadac505b6403e397e83d1142214c0ab36ccd4354a166bf",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU008",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\西红柿方便面 6903252074529\\IMG_20260609_222203.jpg",
+      "dest": "dataset_raw_v260\\SKU008\\images\\SKU008_007.jpg",
+      "sha256": "b13162ae16d4eb67fb24206ce0d62b3d823a70c3823f412fae089dcb6527caed",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU008",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\西红柿方便面 6903252074529\\IMG_20260609_222204.jpg",
+      "dest": "dataset_raw_v260\\SKU008\\images\\SKU008_008.jpg",
+      "sha256": "78784957172ebbcb6f88dbaa8fea47509a0781fb0e7544e7d0a1a904a1d4dbf2",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU008",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\西红柿方便面 6903252074529\\IMG_20260609_222206.jpg",
+      "dest": "dataset_raw_v260\\SKU008\\images\\SKU008_009.jpg",
+      "sha256": "4f6829ea45b751cf31fb864b878d6a8f9494e1fbd5e52208231cda2568c648f6",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU008",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\西红柿方便面 6903252074529\\IMG_20260609_222207.jpg",
+      "dest": "dataset_raw_v260\\SKU008\\images\\SKU008_010.jpg",
+      "sha256": "547a55b38d26a4c78b04039014caeafbab95e685943a1cc63b7f9fb23fae897c",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU008",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\西红柿方便面 6903252074529\\IMG_20260609_222208.jpg",
+      "dest": "dataset_raw_v260\\SKU008\\images\\SKU008_011.jpg",
+      "sha256": "d7d231e6471fe46b5e47347aca0e97818ad9a3c8f0c5e44c2e01acf292756b3b",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU009",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\魔爪 6974497110167\\IMG_20260609_221553.jpg",
+      "dest": "dataset_raw_v260\\SKU009\\images\\SKU009_001.jpg",
+      "sha256": "2d3cddf5be42e332a39e7c22f46ac52842269df29f1c12b2a7192acb7e51da64",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU009",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\魔爪 6974497110167\\IMG_20260609_221559.jpg",
+      "dest": "dataset_raw_v260\\SKU009\\images\\SKU009_002.jpg",
+      "sha256": "339f61ed73b41d1796a3f38c85cb8abf4c448d97b8e8c4fadcaee9e9eeec9b59",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU009",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\魔爪 6974497110167\\IMG_20260609_221603.jpg",
+      "dest": "dataset_raw_v260\\SKU009\\images\\SKU009_003.jpg",
+      "sha256": "a215721990c7f65a21efcf9d2c826849d9c10ef6af74a9d2cbcbcf1e717be416",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU009",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\魔爪 6974497110167\\IMG_20260609_221609.jpg",
+      "dest": "dataset_raw_v260\\SKU009\\images\\SKU009_004.jpg",
+      "sha256": "db09b62d282e901ba7bb5e5e7739e97850cebd0f806ecfb97958a22769930003",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU009",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\魔爪 6974497110167\\IMG_20260609_221613.jpg",
+      "dest": "dataset_raw_v260\\SKU009\\images\\SKU009_005.jpg",
+      "sha256": "441ad042408f1fe5fb1b7715301200b1807ed94cebdcabe943b04a311c688a67",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU009",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\魔爪 6974497110167\\IMG_20260609_221618.jpg",
+      "dest": "dataset_raw_v260\\SKU009\\images\\SKU009_006.jpg",
+      "sha256": "30366724ccc5c10449070b81342fbe76c0c298c75b88429fc45e0533f4db36f8",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU009",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\魔爪 6974497110167\\IMG_20260609_221621.jpg",
+      "dest": "dataset_raw_v260\\SKU009\\images\\SKU009_007.jpg",
+      "sha256": "30251a8c81b148616d8a08a3c2ce67e1a9137010aed1a13f3d33d2f5a790011e",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU009",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\魔爪 6974497110167\\IMG_20260609_221625.jpg",
+      "dest": "dataset_raw_v260\\SKU009\\images\\SKU009_008.jpg",
+      "sha256": "c59bf814bd3552aae882ea30cf9089fe4300f9287f826e3b42c494ffaa05d779",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU009",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\魔爪 6974497110167\\IMG_20260609_221628.jpg",
+      "dest": "dataset_raw_v260\\SKU009\\images\\SKU009_009.jpg",
+      "sha256": "187fdf663c2102a6e6dabe37e97dc55fabc606aae6630e74bde08cb8f305d8d8",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU009",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\魔爪 6974497110167\\IMG_20260609_221633.jpg",
+      "dest": "dataset_raw_v260\\SKU009\\images\\SKU009_010.jpg",
+      "sha256": "24f57cc7c20cf908e2ac57df0ee543a15f40aeceaaf6b403bd45e1d6ccedb201",
+      "width": 4096,
+      "height": 3072
+    },
+    {
+      "product_id": "SKU009",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\魔爪 6974497110167\\IMG_20260609_221636.jpg",
+      "dest": "dataset_raw_v260\\SKU009\\images\\SKU009_011.jpg",
+      "sha256": "baee9b6ef327157aaee821ce6cc5bb2e6e41ad4b9d3a8f4075c003a709797178",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU009",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\魔爪 6974497110167\\IMG_20260609_221638.jpg",
+      "dest": "dataset_raw_v260\\SKU009\\images\\SKU009_012.jpg",
+      "sha256": "ae4b969bb0268507c358c7d171349563fda8bbc3ba827f934a18904b585f610e",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU009",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\魔爪 6974497110167\\IMG_20260609_221641.jpg",
+      "dest": "dataset_raw_v260\\SKU009\\images\\SKU009_013.jpg",
+      "sha256": "924d5efe46a2d2045e41b35a7f8c604771059abaf048f0fdb7723b9a6cbbcfae",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU010",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\鱼油胶囊 6959563502710\\IMG_20260609_223015.jpg",
+      "dest": "dataset_raw_v260\\SKU010\\images\\SKU010_001.jpg",
+      "sha256": "2dff206ff360af1282c695b10c9a66c7a907e637c0b1ae697e3febcbece80526",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU010",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\鱼油胶囊 6959563502710\\IMG_20260609_223017.jpg",
+      "dest": "dataset_raw_v260\\SKU010\\images\\SKU010_002.jpg",
+      "sha256": "de0ef1076330230565e6be6bfd81d9becfa6cdcf24b1a455bac14be04d698b32",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU010",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\鱼油胶囊 6959563502710\\IMG_20260609_223020.jpg",
+      "dest": "dataset_raw_v260\\SKU010\\images\\SKU010_003.jpg",
+      "sha256": "02a37b8239701695886d5d7e91b2e33a117592f8c6f7d14b7159d0d63206c906",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU010",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\鱼油胶囊 6959563502710\\IMG_20260609_223023.jpg",
+      "dest": "dataset_raw_v260\\SKU010\\images\\SKU010_004.jpg",
+      "sha256": "0b8493ba05de1637a9659fd1d07602b4a760e53900680c84e4044984acd0e316",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU010",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\鱼油胶囊 6959563502710\\IMG_20260609_223025.jpg",
+      "dest": "dataset_raw_v260\\SKU010\\images\\SKU010_005.jpg",
+      "sha256": "f3f08b69e33b30cfb2468409f2d2da2d99f26aba085f70bf0aca00ff8109a81d",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU010",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\鱼油胶囊 6959563502710\\IMG_20260609_223027.jpg",
+      "dest": "dataset_raw_v260\\SKU010\\images\\SKU010_006.jpg",
+      "sha256": "1fbda0f9251e9afdc2f1878ff45d33551000f3a1e5fdf5bdfb01c13aa237ee7b",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU010",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\鱼油胶囊 6959563502710\\IMG_20260609_223031.jpg",
+      "dest": "dataset_raw_v260\\SKU010\\images\\SKU010_007.jpg",
+      "sha256": "ec4defb836742971bc27c0aeb01070b2421ecededeada98ef307343b42204741",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU010",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\鱼油胶囊 6959563502710\\IMG_20260609_223034.jpg",
+      "dest": "dataset_raw_v260\\SKU010\\images\\SKU010_008.jpg",
+      "sha256": "921d682c4ebd0b2788d490151ea55f7954da48b548b738f7ffd3cb66a471da8d",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU010",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\鱼油胶囊 6959563502710\\IMG_20260609_223039.jpg",
+      "dest": "dataset_raw_v260\\SKU010\\images\\SKU010_009.jpg",
+      "sha256": "f256ed4761c4225b7b9334d7176921b91a85946d72922853c7b713eb97205ec7",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU010",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\鱼油胶囊 6959563502710\\IMG_20260609_223042.jpg",
+      "dest": "dataset_raw_v260\\SKU010\\images\\SKU010_010.jpg",
+      "sha256": "445d23e3d8aec0d9dba06b1fecfeb20de82ba01f53f6776cd56883c727f78342",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU010",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\鱼油胶囊 6959563502710\\IMG_20260609_223044.jpg",
+      "dest": "dataset_raw_v260\\SKU010\\images\\SKU010_011.jpg",
+      "sha256": "53cfb42307c72c3b878b74e35acc94c23287b57ba816bc938a0693329a95ce25",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU010",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\鱼油胶囊 6959563502710\\IMG_20260609_223046.jpg",
+      "dest": "dataset_raw_v260\\SKU010\\images\\SKU010_012.jpg",
+      "sha256": "54623b607883d1becd4948abd2ae8019e040a52d70c2c78a95ff1f9eb046499f",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU010",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\鱼油胶囊 6959563502710\\IMG_20260609_223047.jpg",
+      "dest": "dataset_raw_v260\\SKU010\\images\\SKU010_013.jpg",
+      "sha256": "90c6205d1198d57572b4b57b54ccd00a1d538d59d8eb96f68578d61ef71380be",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU010",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\鱼油胶囊 6959563502710\\IMG_20260609_223049.jpg",
+      "dest": "dataset_raw_v260\\SKU010\\images\\SKU010_014.jpg",
+      "sha256": "7701ec8a548950ff1e82f005b76f0257241aa076b01fc4f72a31b7af22803e2d",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU010",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\鱼油胶囊 6959563502710\\IMG_20260609_223051.jpg",
+      "dest": "dataset_raw_v260\\SKU010\\images\\SKU010_015.jpg",
+      "sha256": "d7393dee657a81e9719af53c34d2f9eb4091848f6c31118ecbc72ce6f53497b8",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU010",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\鱼油胶囊 6959563502710\\IMG_20260609_223053.jpg",
+      "dest": "dataset_raw_v260\\SKU010\\images\\SKU010_016.jpg",
+      "sha256": "793f4da290600615c412308c8974c71a268f6d90957d94d7c5fb6c6bf75e1291",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU010",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\鱼油胶囊 6959563502710\\IMG_20260609_223054.jpg",
+      "dest": "dataset_raw_v260\\SKU010\\images\\SKU010_017.jpg",
+      "sha256": "6c56a9719df1fb2c1d4dc2cc065648c03f0326333ab6dc766465e56a2b2b50cf",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU010",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\鱼油胶囊 6959563502710\\IMG_20260609_223055.jpg",
+      "dest": "dataset_raw_v260\\SKU010\\images\\SKU010_018.jpg",
+      "sha256": "902a3b1559415a558e0515eb7eb4366cc6218676d363d3004510a0aef0a83d98",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU010",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\鱼油胶囊 6959563502710\\IMG_20260609_223057.jpg",
+      "dest": "dataset_raw_v260\\SKU010\\images\\SKU010_019.jpg",
+      "sha256": "f480e3b7014a1246978252b3cafcccff41229a69c279fcc702f37292b227004c",
+      "width": 3072,
+      "height": 4096
+    },
+    {
+      "product_id": "SKU010",
+      "source": "C:\\Users\\MR\\AppData\\Local\\Temp\\vision_zip_intake_xej4de8x\\图像识别\\鱼油胶囊 6959563502710\\IMG_20260609_223058.jpg",
+      "dest": "dataset_raw_v260\\SKU010\\images\\SKU010_020.jpg",
+      "sha256": "7b1407075d37391c99d0a7604e9bc36bb0a12e90597efe6b804333733cff5db3",
+      "width": 3072,
+      "height": 4096
+    }
+  ]
+}

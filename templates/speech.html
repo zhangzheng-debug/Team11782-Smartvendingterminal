@@ -1,0 +1,193 @@
+
+{% extends "base.html" %}
+{% block title %}语音识别命令
+{% block scripts %}
+<script>
+let autoVoiceRunning = false;
+let autoVoiceRound = 0;
+
+function appendAutoVoiceLog(text, intent, result, latency) {
+  const tbody = document.getElementById("autoVoiceLog");
+  const tr = document.createElement("tr");
+  tr.innerHTML = `<td>${autoVoiceRound}</td><td>${text || "-"}</td><td>${intent || "-"}</td><td>${result || "-"}</td><td>${latency || "-"} ms</td>`;
+  tbody.prepend(tr);
+}
+
+async function autoVoiceLoop() {
+  if (!autoVoiceRunning) return;
+  autoVoiceRound += 1;
+  const status = document.getElementById("autoVoiceStatus");
+  const seconds = parseInt(document.getElementById("autoSeconds").value || "3", 10);
+  const lang = document.getElementById("autoLang").value || "zh";
+
+  status.textContent = `状态：第 ${autoVoiceRound} 轮录音/识别中...`;
+  const start = Date.now();
+
+  try {
+    const r = await fetch("{{ url_for('speech_auto_once') }}", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({seconds: seconds, lang: lang, execute: "1"})
+    });
+    const data = await r.json();
+    const latency = Date.now() - start;
+
+    if (data.ok) {
+      const intent = data.parsed ? data.parsed.intent : "-";
+      const result = data.exec_result ? data.exec_result.result : "-";
+      appendAutoVoiceLog(data.text, intent, result, latency);
+      status.textContent = `状态：识别到「${data.text}」，意图 ${intent}，执行：${result}`;
+      if (data.redirect_url) {
+        autoVoiceRunning = false;
+        status.textContent = "状态：已生成结账订单，即将跳转支付页";
+        setTimeout(() => { window.location.href = data.redirect_url; }, 800);
+        return;
+      }
+    } else {
+      appendAutoVoiceLog("-", data.stage || "error", data.error || "失败", latency);
+      status.textContent = `状态：${data.stage || "error"} 失败：${data.error || ""}`;
+    }
+  } catch (e) {
+    appendAutoVoiceLog("-", "exception", e.toString(), "-");
+    status.textContent = "状态：请求异常 " + e.toString();
+  }
+
+  if (autoVoiceRunning) setTimeout(autoVoiceLoop, 500);
+}
+
+document.getElementById("startAutoVoice")?.addEventListener("click", () => {
+  autoVoiceRunning = true;
+  autoVoiceRound = 0;
+  document.getElementById("autoVoiceLog").innerHTML = "";
+  autoVoiceLoop();
+});
+
+document.getElementById("stopAutoVoice")?.addEventListener("click", () => {
+  autoVoiceRunning = false;
+  document.getElementById("autoVoiceStatus").textContent = "状态：已停止";
+});
+</script>
+{% endblock %}
+
+{% endblock %}
+{% block content %}
+<section class="card">
+  <h2>语音识别命令</h2>
+  <p class="hint">
+    当前稳定输入/输出设备：输入 <b>{{ input_device }}</b>，输出 <b>{{ output_device }}</b>。
+    本页第一阶段先完成“录音 → Whisper RKNN 接口 → 文本命令执行”的链路。
+  </p>
+  <div class="actions">
+    <form action="{{ url_for('speech_record') }}" method="post" class="scanner-form">
+      <input name="seconds" value="5" placeholder="录音秒数">
+      <button class="primary" type="submit">录制语音命令</button>
+    </form>
+    <a class="button-link" href="{{ url_for('speech_command_wav') }}">下载 speech_command.wav</a>
+  </div>
+</section>
+
+<section class="card">
+  <h2>自动语音会话模式</h2>
+  <p class="hint">
+    当前为“轮次式自动语音”：点击开始后，系统会循环执行 录音 → Whisper 识别 → 模糊意图解析 → 自动执行业务命令。
+    这不是连续流式识别，但适合固定短命令演示。后续可接入人脸/人体检测作为自动开始和停止条件。
+  </p>
+  <div class="scanner-form">
+    <input id="autoSeconds" value="3" placeholder="每轮录音秒数，建议 2-3">
+    <select id="autoLang">
+      <option value="zh">中文 zh</option>
+      <option value="en">英文 en</option>
+    </select>
+    <button class="primary" id="startAutoVoice" type="button">开始自动语音</button>
+    <button id="stopAutoVoice" type="button">停止</button>
+  </div>
+  <p id="autoVoiceStatus" class="hint">状态：未启动</p>
+  <table>
+    <thead><tr><th>轮次</th><th>识别文本</th><th>意图</th><th>执行结果</th><th>耗时</th></tr></thead>
+    <tbody id="autoVoiceLog"></tbody>
+  </table>
+</section>
+
+<section class="grid two">
+  <div class="card">
+    <h2>Whisper RKNN 状态</h2>
+    <table>
+      <tr><th>Demo 目录</th><td>{{ status.demo_dir }}</td></tr>
+      <tr><th>目录存在</th><td>{{ status.exists_demo_dir }}</td></tr>
+      <tr><th>可执行文件</th><td>{{ status.exists_exe }}</td></tr>
+      <tr><th>Encoder 模型</th><td>{{ status.exists_encoder }}</td></tr>
+      <tr><th>Decoder 模型</th><td>{{ status.exists_decoder }}</td></tr>
+    </table>
+    <p class="hint">
+      如果 Encoder/Decoder 模型缺失，需要把官方 whisper_encoder_base_20s.rknn 和 whisper_decoder_base_20s.rknn 放到
+      /userdata/rknn_whisper_demo/model/ 目录。当前可以先用下方“手动文本执行”验证业务逻辑。
+    </p>
+    <form action="{{ url_for('speech_recognize') }}" method="post" class="actions">
+      <select name="lang">
+        <option value="zh">中文 zh</option>
+        <option value="en">英文 en</option>
+      </select>
+      <label style="display:flex;align-items:center;gap:6px;">
+        <input type="checkbox" name="auto_execute" value="1">
+        识别后自动执行
+      </label>
+      <button class="primary" type="submit">运行 Whisper 识别</button>
+    </form>
+  </div>
+
+  <div class="card">
+    <h2>最近识别结果</h2>
+    <p>识别文本：<b>{{ latest_text or '暂无' }}</b></p>
+    <p>耗时：{{ latest_latency }} ms</p>
+    {% if latest_parsed %}
+      <p>解析意图：<span class="tag">{{ latest_parsed.intent }}</span> ｜ 置信度：{{ latest_parsed.confidence }} ｜ 归一化：{{ latest_parsed.normalized }}</p>
+      {% if latest_parsed.matched_pattern %}<p>纠错命中：{{ latest_parsed.matched_pattern }}</p>{% endif %}
+      {% if latest_parsed.confirm_required %}<p class="hint danger">该命令属于高风险动作，建议现场演示时二次确认后执行。</p>{% endif %}
+    {% endif %}
+    <form action="{{ url_for('speech_execute') }}" method="post" class="scanner-form">
+      <input name="text" value="{{ latest_text }}" placeholder="也可手动输入：一共多少钱 / 删除上一件 / 清空购物车 / 我要结账">
+      <button class="primary" type="submit">按文本执行命令</button>
+    </form>
+    <div class="chips">
+      {% for cmd in ['一共多少钱','可乐多少钱','删除上一件','清空购物车','拍照','我要结账'] %}
+      <form action="{{ url_for('speech_execute') }}" method="post" class="inline">
+        <input type="hidden" name="text" value="{{ cmd }}">
+        <button class="chip" type="submit">{{ cmd }}</button>
+      </form>
+      {% endfor %}
+    </div>
+    <p class="hint">支持模糊说法：付款/买单/支付、总价多少/一共多钱、删上一件/去掉最后一件、清空/清除购物车、拍一下/采集。</p>
+    <p class="hint">V2.5.4 已加入 50 条评测样本纠错：我要截正/节证/接着 → 结账；三厨上一件/山厨上一间 → 删除上一件；轻空告我车/金空告我车 → 清空购物车。</p>
+    <pre>{{ latest_raw }}</pre>
+  </div>
+</section>
+
+<section class="grid two">
+  <div class="card">
+    <h2>语音命令日志</h2>
+    <table>
+      <thead><tr><th>时间</th><th>文本</th><th>意图</th><th>结果</th></tr></thead>
+      <tbody>
+      {% for v in voice_logs %}
+      <tr><td>{{ v.timestamp }}</td><td>{{ v.raw_text }}</td><td>{{ v.intent }}</td><td>{{ v.action_result }}</td></tr>
+      {% else %}
+      <tr><td colspan="4">暂无</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div class="card">
+    <h2>音频录音日志</h2>
+    <table>
+      <thead><tr><th>时间</th><th>动作</th><th>输入/输出</th><th>结果</th></tr></thead>
+      <tbody>
+      {% for a in audio_logs %}
+      <tr><td>{{ a.timestamp }}</td><td>{{ a.action }}</td><td>{{ a.input_device or a.output_device }}</td><td>{% if a.success %}✅{% else %}❌ {{ a.message }}{% endif %}</td></tr>
+      {% else %}
+      <tr><td colspan="4">暂无</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endblock %}

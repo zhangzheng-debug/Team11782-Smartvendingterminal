@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block title %}音频播报与录音测试{% endblock %}
+{% block content %}
+<section class="card">
+  <h2>音频播报与录音测试</h2>
+  <p class="hint">推荐配置：输出设备 USB 耳机 <b>plughw:1,0</b>；输入设备板载麦克风 <b>hw:0,0</b>。扫码、未知商品、拍照、支付等待、云端支付成功都会触发板端提示音。</p>
+  <form method="post" class="bind-form">
+    <input name="output_device" value="{{ output_device }}" placeholder="输出设备，例如 plughw:1,0">
+    <input name="input_device" value="{{ input_device }}" placeholder="输入设备，例如 hw:0,0">
+    <button class="primary" type="submit">保存音频设备</button>
+  </form>
+</section>
+
+<section class="grid two">
+  <div class="card">
+    <h2>播放测试</h2>
+    <div class="actions">
+      <form action="{{ url_for('audio_test_tone') }}" method="post"><button class="primary">播放 1kHz 测试音</button></form>
+      {% for key, file in events.items() %}
+      <form action="{{ url_for('audio_play_event', event_key=key) }}" method="post"><button>{{ key }}</button></form>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="card">
+    <h2>录音测试</h2>
+    <form action="{{ url_for('audio_record_route') }}" method="post" class="scanner-form">
+      <input name="seconds" value="4" placeholder="录音秒数 1-10">
+      <button class="primary" type="submit">录音</button>
+    </form>
+    <div class="actions">
+      <form action="{{ url_for('audio_play_latest') }}" method="post"><button>播放最近录音</button></form>
+      <a class="button-link" href="{{ url_for('audio_latest_wav') }}">下载最近录音</a>
+    </div>
+  </div>
+</section>
+
+<section class="grid two">
+  <div class="card">
+    <h2>声卡信息</h2>
+    <h3>/proc/asound/cards</h3><pre>{{ info.cards }}</pre>
+    <h3>aplay -l</h3><pre>{{ info.aplay }}</pre>
+    <h3>arecord -l</h3><pre>{{ info.arecord }}</pre>
+  </div>
+  <div class="card">
+    <h2>Mixer 控件</h2>
+    <h3>card 0</h3><pre>{{ info.scontrols0 }}</pre>
+    <h3>card 1</h3><pre>{{ info.scontrols1 }}</pre>
+  </div>
+</section>
+
+<section class="card">
+  <h2>音频日志</h2>
+  <table>
+    <thead><tr><th>时间</th><th>动作</th><th>事件</th><th>输出</th><th>输入</th><th>耗时</th><th>结果</th></tr></thead>
+    <tbody>
+    {% for l in logs %}
+    <tr><td>{{ l.timestamp }}</td><td>{{ l.action }}</td><td>{{ l.event_key or '-' }}</td><td>{{ l.output_device or '-' }}</td><td>{{ l.input_device or '-' }}</td><td>{{ l.latency_ms }} ms</td><td>{% if l.success %}✅{% else %}❌ {{ l.message }}{% endif %}</td></tr>
+    {% else %}
+    <tr><td colspan="7">暂无音频日志</td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</section>
+{% endblock %}

@@ -1,0 +1,57 @@
+{
+  "model_version": "v263_rknn_10sku_baseline",
+  "source_onnx": "MODEL_ARTIFACTS_V260/model.onnx",
+  "source_metadata": "MODEL_ARTIFACTS_V260/model_metadata.json",
+  "target_platform": "rk3568",
+  "label_order_locked": true,
+  "labels": [
+    "SKU001_三元酸奶",
+    "SKU002_上海硫磺皂",
+    "SKU003_冠益乳",
+    "SKU004_燕麦代餐棒",
+    "SKU005_立顿乌龙茶固体饮料",
+    "SKU006_纳美科学牙膏",
+    "SKU007_绿豆糕",
+    "SKU008_西红柿方便面",
+    "SKU009_魔爪",
+    "SKU010_鱼油胶囊"
+  ],
+  "default_model": "MODEL_ARTIFACTS_V263_RKNN/vision_10sku_v263_default.rknn",
+  "exports": [
+    {
+      "variant": "fp",
+      "path": "MODEL_ARTIFACTS_V263_RKNN/vision_10sku_v263_fp.rknn",
+      "quantized": false,
+      "ok": true
+    },
+    {
+      "variant": "i8",
+      "path": "MODEL_ARTIFACTS_V263_RKNN/vision_10sku_v263_i8.rknn",
+      "quantized": true,
+      "ok": true
+    }
+  ],
+  "preprocess": {
+    "color": "RGB",
+    "resize": [
+      224,
+      224
+    ],
+    "input_layout": "NCHW in ONNX",
+    "normalization": "divide_by_255",
+    "rknn_mean_values": [
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "rknn_std_values": [
+      [
+        255,
+        255,
+        255
+      ]
+    ]
+  }
+}

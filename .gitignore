@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Runtime logs
+*.log
+logs/
+kiosk_launcher_logs/
+
+# Local databases and backups
+*.db
+*.sqlite
+*.sqlite3
+database/*.db
+database/*.sqlite*
+checkpoints/
+backup*/
+
+# Local device and deployment outputs
+adb_push_tmp/
+pydeps/
+build/
+dist/
+
+# Large raw datasets
+dataset_raw*/
+raw_images/
+captures/
+static/captures/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Secrets
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+.env
+

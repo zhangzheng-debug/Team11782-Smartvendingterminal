@@ -1,0 +1,14 @@
+{
+  "model_version": "v260_10sku_yolov8n_cls_baseline",
+  "model_type": "YOLOv8n-cls baseline",
+  "source_run_dir": "runs\\classify\\runs\\retail_10sku_v260\\yolov8n_cls_10sku_v260",
+  "dataset": "datasets/vision_10sku_cls_v260",
+  "imgsz": 224,
+  "epochs_requested": 50,
+  "test_images": 18,
+  "top1_accuracy": 0.9444,
+  "top3_accuracy": 1.0,
+  "class_count": 10,
+  "warning": "Low sample count baseline; not a final production model.",
+  "safe_business_policy": "barcode adds once; vision verifies/candidates only; no automatic repeat add."
+}

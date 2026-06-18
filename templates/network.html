@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}网络诊断{% endblock %}
+{% block content %}
+<section class="card">
+  <h2>网络诊断</h2>
+  <p>eth0 IP：<b>{{ info.eth0_ip or '未获取' }}</b></p>
+  <p>推荐访问地址：<span class="tag">http://{{ info.eth0_ip or '开发板IP' }}:5000</span></p>
+  <p class="hint">电脑直连板子时，可使用 Windows 网络共享，让板子获得 192.168.137.x 地址；若手机也要扫码访问，最好让手机、电脑、板子处于同一局域网。</p>
+</section>
+
+<section class="grid two">
+  <div class="card">
+    <h3>ip addr</h3>
+    <pre>{{ info.ip_addr }}</pre>
+  </div>
+  <div class="card">
+    <h3>route / DNS</h3>
+    <pre>{{ info.route }}</pre>
+    <pre>{{ info.resolv }}</pre>
+  </div>
+</section>
+{% endblock %}

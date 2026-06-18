@@ -1,0 +1,11 @@
+﻿product_id,product_name,barcode,price_cent,category,image_count,train_enabled,notes
+SKU001,三元酸奶,6921355232318,350,乳制品,12,True,current_db_price;baseline_low_sample_count;below_recommended_40_60_images
+SKU002,上海硫磺皂,6901404300854,250,日用品,9,True,current_db_price;baseline_low_sample_count;below_recommended_40_60_images
+SKU003,冠益乳,6934665096747,790,乳制品,11,True,current_db_price;baseline_low_sample_count;below_recommended_40_60_images
+SKU004,燕麦代餐棒,6974698890110,590,食品,9,True,current_db_price;baseline_low_sample_count;below_recommended_40_60_images
+SKU005,立顿乌龙茶固体饮料,6902088923193,1290,冲调饮品,10,True,current_db_price;baseline_low_sample_count;below_recommended_40_60_images
+SKU006,纳美科学牙膏,6933179230234,1590,日用品,9,True,current_db_price;baseline_low_sample_count;below_recommended_40_60_images
+SKU007,绿豆糕,6957310419210,890,糕点,13,True,current_db_price;baseline_low_sample_count;below_recommended_40_60_images
+SKU008,西红柿方便面,6903252074529,550,主食,11,True,current_db_price;baseline_low_sample_count;below_recommended_40_60_images
+SKU009,魔爪,6974497110167,700,饮料,13,True,current_db_price;baseline_low_sample_count;below_recommended_40_60_images
+SKU010,鱼油胶囊,6959563502710,3990,营养品,20,True,current_db_price;baseline_low_sample_count

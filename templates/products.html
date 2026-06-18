@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}商品与条码{% endblock %}
+{% block content %}
+<section class="grid two">
+  <div class="card">
+    <h2>商品清单</h2>
+    <table>
+      <thead><tr><th>SKU</th><th>商品</th><th>类别</th><th>价格</th><th>库存</th><th>条码</th></tr></thead>
+      <tbody>
+      {% for p in products %}
+      <tr><td>{{ p.product_id }}</td><td>{{ p.product_name }}</td><td>{{ p.category }}</td><td>{{ p.price_cent|money }}</td><td>{{ p.stock }}</td><td>{{ p.all_barcodes or p.barcode }}</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>已绑定条码</h2>
+    <table>
+      <thead><tr><th>条码</th><th>商品</th><th>来源</th><th>时间</th></tr></thead>
+      <tbody>
+      {% for b in barcodes %}
+      <tr><td>{{ b.barcode }}</td><td>{{ b.product_name }}</td><td>{{ b.source }}</td><td>{{ b.created_at }}</td></tr>
+      {% else %}
+      <tr><td colspan="4">暂无绑定</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endblock %}

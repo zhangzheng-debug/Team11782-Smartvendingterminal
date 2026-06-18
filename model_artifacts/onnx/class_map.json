@@ -1,0 +1,62 @@
+{
+  "SKU001": {
+    "class_index": 0,
+    "class_name": "SKU001_三元酸奶",
+    "product_name": "三元酸奶",
+    "barcode": "6921355232318"
+  },
+  "SKU002": {
+    "class_index": 1,
+    "class_name": "SKU002_上海硫磺皂",
+    "product_name": "上海硫磺皂",
+    "barcode": "6901404300854"
+  },
+  "SKU003": {
+    "class_index": 2,
+    "class_name": "SKU003_冠益乳",
+    "product_name": "冠益乳",
+    "barcode": "6934665096747"
+  },
+  "SKU004": {
+    "class_index": 3,
+    "class_name": "SKU004_燕麦代餐棒",
+    "product_name": "燕麦代餐棒",
+    "barcode": "6974698890110"
+  },
+  "SKU005": {
+    "class_index": 4,
+    "class_name": "SKU005_立顿乌龙茶固体饮料",
+    "product_name": "立顿乌龙茶固体饮料",
+    "barcode": "6902088923193"
+  },
+  "SKU006": {
+    "class_index": 5,
+    "class_name": "SKU006_纳美科学牙膏",
+    "product_name": "纳美科学牙膏",
+    "barcode": "6933179230234"
+  },
+  "SKU007": {
+    "class_index": 6,
+    "class_name": "SKU007_绿豆糕",
+    "product_name": "绿豆糕",
+    "barcode": "6957310419210"
+  },
+  "SKU008": {
+    "class_index": 7,
+    "class_name": "SKU008_西红柿方便面",
+    "product_name": "西红柿方便面",
+    "barcode": "6903252074529"
+  },
+  "SKU009": {
+    "class_index": 8,
+    "class_name": "SKU009_魔爪",
+    "product_name": "魔爪",
+    "barcode": "6974497110167"
+  },
+  "SKU010": {
+    "class_index": 9,
+    "class_name": "SKU010_鱼油胶囊",
+    "product_name": "鱼油胶囊",
+    "barcode": "6959563502710"
+  }
+}

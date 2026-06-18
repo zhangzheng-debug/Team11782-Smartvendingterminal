@@ -1,0 +1,47 @@
+
+{% extends "base.html" %}
+{% block title %}云端支付服务{% endblock %}
+{% block content %}
+<section class="card">
+  <h2>云端支付服务配置</h2>
+  <p class="hint">这里配置 DigitalOcean 上的 cloud_payment_service 地址。结账时板端会创建云端订单，二维码指向云端支付页，手机支付后板端自动轮询确认。</p>
+  <form action="{{ url_for('cloud_settings') }}" method="post" class="scanner-form">
+    <input name="cloud_base_url" value="{{ cloud_base_url }}" placeholder="例如 http://139.59.102.178:8000">
+    <button class="primary" type="submit">保存云端地址</button>
+  </form>
+  <p>当前状态：
+    {% if status.ok %}<span class="tag">云端可用</span>{% else %}<span class="tag">云端不可用</span>{% endif %}
+  </p>
+  <pre>{{ status }}</pre>
+</section>
+
+<section class="grid two">
+  <div class="card">
+    <h2>最近云端订单</h2>
+    <table>
+      <thead><tr><th>本地订单</th><th>云端订单</th><th>状态</th><th>支付URL</th></tr></thead>
+      <tbody>
+      {% for o in orders %}
+      <tr><td>{{ o.order_id }}</td><td>{{ o.cloud_order_id }}</td><td>{{ o.cloud_status }}</td><td>{{ o.cloud_pay_url }}</td></tr>
+      {% else %}
+      <tr><td colspan="4">暂无云端订单</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>最近云端日志</h2>
+    <table>
+      <thead><tr><th>时间</th><th>事件</th><th>状态</th><th>结果</th></tr></thead>
+      <tbody>
+      {% for l in logs %}
+      <tr><td>{{ l.timestamp }}</td><td>{{ l.event_type }}</td><td>{{ l.status or '-' }}</td><td>{% if l.success %}✅{% else %}❌ {{ l.message }}{% endif %}</td></tr>
+      {% else %}
+      <tr><td colspan="4">暂无日志</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endblock %}

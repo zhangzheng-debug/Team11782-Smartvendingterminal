@@ -1,0 +1,8 @@
+# Optional PC-side tooling. Board-side RKNN runtime is not installed from pip.
+numpy>=1.23
+onnxruntime>=1.16
+opencv-python>=4.8
+ultralytics>=8.0
+edge-tts>=6.1
+imageio-ffmpeg>=0.4
+

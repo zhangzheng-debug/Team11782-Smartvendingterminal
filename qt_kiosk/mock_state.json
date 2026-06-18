@@ -1,0 +1,37 @@
+{
+  "ok": true,
+  "terminal_id": "QSM368ZP-WF-001",
+  "time": "2026-06-08 10:30:00",
+  "cart": {
+    "items": [
+      {
+        "product_id": "SKU006",
+        "product_name": "Demo Noodles",
+        "short_name": "Noodles",
+        "unit_price_cent": 500,
+        "unit_price_text": "5.00",
+        "quantity": 1,
+        "subtotal_cent": 500,
+        "subtotal_text": "5.00"
+      }
+    ],
+    "count": 1,
+    "line_count": 1,
+    "total_cent": 500,
+    "total_text": "5.00"
+  },
+  "products": [
+    { "product_id": "SKU001", "product_name": "Demo Water", "short_name": "Water", "price_cent": 200, "price_text": "2.00" },
+    { "product_id": "SKU006", "product_name": "Demo Noodles", "short_name": "Noodles", "price_cent": 500, "price_text": "5.00" }
+  ],
+  "latest_capture": "",
+  "latest_speech_text": "checkout",
+  "latest_speech_parsed": { "intent": "checkout", "confirm_required": true },
+  "latest_vision": {},
+  "latest_order": {},
+  "audio": {
+    "output_device": "plughw:CARD=III,DEV=0",
+    "input_device": "plughw:CARD=III,DEV=0"
+  }
+}
+

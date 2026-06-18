@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "onnx": "MODEL_ARTIFACTS_V260/model.onnx",
+  "rknn": "MODEL_ARTIFACTS_V263_RKNN/vision_10sku_v263_fp.rknn",
+  "variant": "fp",
+  "evaluation_mode": "load_onnx_build_then_simulator_inference",
+  "image_count": 117,
+  "top1_agreement": 117,
+  "top1_agreement_rate": 1.0,
+  "top3_contains_onnx_top1": 117,
+  "top3_contains_onnx_top1_rate": 1.0,
+  "mismatch_count": 0
+}

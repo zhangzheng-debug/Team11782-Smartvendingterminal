@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}支付成功{% endblock %}
+{% block content %}
+<section class="card pay-success">
+  <h2>支付成功</h2>
+  <p class="done" style="font-size:28px;">云端订单已标记为 paid。</p>
+  <p>云端订单：<span class="tag">{{ order.cloud_order_id }}</span></p>
+  <p>本地订单：{{ order.local_order_id }}</p>
+  <p>支付金额：<strong>{{ money(order.total_price_cent) }}</strong></p>
+  <p>支付时间：{{ paid_at }}</p>
+  <p>现在可以回到 QSM368ZP-WF 收银台查看 paid 状态和支付成功播报。</p>
+  <p><a class="primary" href="/pay/{{ order.cloud_order_id }}">返回订单页</a></p>
+</section>
+{% endblock %}

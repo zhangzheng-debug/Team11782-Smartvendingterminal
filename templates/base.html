@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}QSM368ZP-WF 智能零售终端{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<header class="topbar">
+  <div>
+    <h1>QSM368ZP-WF 智能零售终端</h1>
+    <p>Flask + SQLite + 扫码盒/扫码枪 + 摄像头采集 + 外观识别兜底 + 支付二维码</p>
+    <p class="mini">访问地址：<b>{{ access_url }}</b> ｜ eth0：<b>{{ eth0_ip or '未获取' }}</b> ｜ 时间：<b>{{ system_time }}</b></p>
+  </div>
+  <nav>
+    <a href="{{ url_for('index') }}">收银台</a>
+    <a href="{{ url_for('dashboard') }}">后台</a>
+    <a href="{{ url_for('metrics') }}">测试统计</a>
+    <a href="{{ url_for('network') }}">网络诊断</a>
+    <a href="{{ url_for('cloud_settings') }}">云端支付</a>
+    <a href="{{ url_for('audio_page') }}">音频播报</a>
+    <a href="{{ url_for('speech_page') }}">语音识别</a>
+    <a href="{{ url_for('products_page') }}">商品/条码</a>
+    <a href="{{ url_for('health') }}">Health</a>
+  </nav>
+</header>
+
+{% if system_time_suspect %}
+<div class="warnbar">
+  检测到系统时间可能未校准。页面会自动用电脑时间校准应用日志时间，也可以点击“立即校时”。
+  <button id="syncTimeBtn" type="button">立即校时</button>
+</div>
+{% endif %}
+
+<div class="flash-wrap">
+  {% if ui_flash %}
+    <div class="flash">{{ ui_flash }}</div>
+  {% endif %}
+</div>
+
+<main>
+  {% block content %}{% endblock %}
+</main>
+
+<script>
+async function syncBrowserTime(){
+  try{
+    await fetch("/api/time/sync", {
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({client_ms: Date.now()})
+    });
+  }catch(e){}
+}
+window.addEventListener("load", () => {
+  syncBrowserTime();
+  const btn = document.getElementById("syncTimeBtn");
+  if(btn){ btn.addEventListener("click", async()=>{ await syncBrowserTime(); location.reload(); }); }
+  const scanner = document.getElementById("barcodeInput");
+  if(scanner){ scanner.focus(); }
+});
+</script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

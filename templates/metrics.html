@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}测试统计{% endblock %}
+{% block content %}
+<section class="card">
+  <h2>测试统计总览</h2>
+  <p class="hint">用于报告中的识别准确率、响应延迟、语音命令成功率和计价闭环证明。</p>
+  <div class="metric-grid">
+    <div><span>订单总数</span><b>{{ metrics.orders_count }}</b></div>
+    <div><span>已支付销售额</span><b>{{ metrics.paid_total_cent|money }}</b></div>
+    <div><span>扫码次数</span><b>{{ metrics.barcode_total }}</b></div>
+    <div><span>扫码成功率</span><b>{{ metrics.barcode_rate }}%</b></div>
+    <div><span>未知条码</span><b>{{ metrics.unknown_barcode }}</b></div>
+    <div><span>拍照次数</span><b>{{ metrics.capture_count }}</b></div>
+    <div><span>平均拍照耗时</span><b>{{ metrics.capture_avg_ms }}ms</b></div>
+    <div><span>外观兜底成功率</span><b>{{ metrics.vision_rate }}%</b></div>
+    <div><span>语音命令成功率</span><b>{{ metrics.voice_rate }}%</b></div>
+    <div><span>云端订单数</span><b>{{ metrics.cloud_orders }}</b></div>
+    <div><span>云端支付成功率</span><b>{{ metrics.cloud_success_rate }}%</b></div>
+    <div><span>云端轮询平均耗时</span><b>{{ metrics.cloud_avg_latency_ms }}ms</b></div>
+  </div>
+</section>
+
+<section class="grid three">
+  <div class="card">
+    <h3>扫码日志</h3>
+    <table><thead><tr><th>时间</th><th>条码</th><th>结果</th><th>耗时</th></tr></thead><tbody>
+      {% for r in barcode_logs %}
+      <tr><td>{{ r.timestamp }}</td><td>{{ r.raw_code }}</td><td>{% if r.success %}✅ {{ r.product_name }}{% else %}❌ {{ r.error_reason }}{% endif %}</td><td>{{ r.latency_ms }}ms</td></tr>
+      {% else %}<tr><td colspan="4">暂无</td></tr>{% endfor %}
+    </tbody></table>
+  </div>
+
+  <div class="card">
+    <h3>外观识别兜底日志</h3>
+    <table><thead><tr><th>时间</th><th>商品</th><th>置信度</th><th>结果</th></tr></thead><tbody>
+      {% for r in vision_logs %}
+      <tr><td>{{ r.timestamp }}</td><td>{{ r.product_name or '-' }}</td><td>{{ '%.2f'|format(r.confidence) if r.confidence is not none else '-' }}</td><td>{% if r.success %}✅{% else %}❌ {{ r.error_reason }}{% endif %}</td></tr>
+      {% else %}<tr><td colspan="4">暂无</td></tr>{% endfor %}
+    </tbody></table>
+  </div>
+
+  <div class="card">
+    <h3>拍照耗时日志</h3>
+    <table><thead><tr><th>时间</th><th>图片</th><th>耗时</th><th>结果</th></tr></thead><tbody>
+      {% for r in capture_logs %}
+      <tr><td>{{ r.timestamp }}</td><td>{{ r.image_path or '-' }}</td><td>{{ r.latency_ms }}ms</td><td>{% if r.success %}✅{% else %}❌{% endif %}</td></tr>
+      {% else %}<tr><td colspan="4">暂无</td></tr>{% endfor %}
+    </tbody></table>
+  </div>
+</section>
+{% endblock %}

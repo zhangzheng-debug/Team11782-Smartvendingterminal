@@ -42,7 +42,10 @@ CAPTURE_MIN_KEEP = 20
 CAPTURE_MAX_KEEP = 50
 CAPTURE_MAX_AGE_DAYS = 7
 CAPTURE_MAX_TOTAL_MB = 100
-DEFAULT_CLOUD_BASE_URL = "http://139.59.102.178:8000"
+# Keep public source code free of a live deployment address. The board can
+# persist its configured endpoint with set_cloud_base_url(), while local/demo
+# runs may provide SMART_RETAIL_CLOUD_BASE_URL explicitly.
+DEFAULT_CLOUD_BASE_URL = os.environ.get("SMART_RETAIL_CLOUD_BASE_URL", "")
 TERMINAL_ID = "QSM368ZP-WF-001"
 CLOUD_POLL_TIMEOUT = 5
 DEFAULT_AUDIO_OUTPUT_DEVICE = "plughw:CARD=III,DEV=0"

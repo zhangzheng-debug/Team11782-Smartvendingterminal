@@ -65,7 +65,7 @@ python3 tools/audio_event_matrix_test.py
 板端测试：
 
 ```sh
-wget -S -O- http://139.59.102.178:8000/health 2>&1 | head -100
+wget -S -O- http://<payment-host>:8000/health 2>&1 | head -100
 ```
 
 如果失败：

@@ -1,34 +1,14 @@
-# Evidence / 证据材料说明
+# 证据清单
 
-本仓库保留了适合公开上传的关键证据，完整现场照片和视频可在答辩材料中补充。
+提交前建议保留以下证据：
 
-## 已随仓库上传
+- 板端 HDMI 收银台全屏照片；
+- SKU 加购、购物车、结账和支付状态照片；
+- 拍照预览和 RKNN Top-3/延迟显示；
+- 扫码枪、摄像头、USB 音频和 HDMI 接线照片；
+- `/api/state`、`/api/vision/status`、`/api/cloud/status` 输出；
+- 自动回归测试结果；
+- 云端订单创建、手机演示支付和 `paid` 回写证据；
+- 失败场景和恢复命令。
 
-- `evidence/screenshots/board_current_screen.png`
-- `evidence/screenshots/dataset_contact_sheet_v260.jpg`
-- `data/10sku_manifest/contact_sheet.jpg`
-- `data/10sku_manifest/manifest.csv`
-- `model_artifacts/onnx/`
-- `model_artifacts/rknn/`
-
-## 建议答辩展示证据
-
-1. HDMI QML 收银台主界面
-2. 扫码枪加购商品
-3. 未知条码提示
-4. 拍照预览与视觉 Top-3
-5. `active_backend=rknn_cli` 状态
-6. 云支付 paid 回写
-7. HyperX 或 USB 声卡枚举
-8. 中文人声播报现场视频
-9. 扫码枪、摄像头、HDMI、音频接口接线照片
-10. 回归测试 PASS 输出
-
-## 关键答辩表述
-
-- 系统是板端 HDMI QML 收银台，不依赖电脑浏览器作为主界面。
-- 条码是稳定收银主通道，视觉用于端侧 AI 辅助校验。
-- RKNN/NPU 后端已经接入，ONNX fallback 保留。
-- 云端支付完成 paid 回写，本地订单状态可同步。
-- 当前 10-SKU 模型是低样本 baseline，需要更多商品图片提升泛化能力。
-
+证据文件应脱敏，不上传私钥、token、个人联系方式、实时订单数据库或未授权的原始商品图片。

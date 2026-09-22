@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}手机支付页{% endblock %}
+{% block content %}
+<section class="card pay" style="position:relative; z-index:1;">
+  <h2>手机支付页</h2>
+  <p>云端订单：<span class="tag">{{ order.cloud_order_id }}</span></p>
+  <p>本地订单：{{ order.local_order_id }}</p>
+  <p>终端：{{ order.terminal_id }}</p>
+  <p class="amount">{{ money(order.total_price_cent) }}</p>
+  <table>
+    <thead><tr><th>商品</th><th>单价</th><th>数量</th><th>小计</th></tr></thead>
+    <tbody>
+      {% for i in items %}
+      <tr><td>{{ i.product_name }}</td><td>{{ money(i.unit_price_cent) }}</td><td>{{ i.quantity }}</td><td>{{ money(i.subtotal_cent) }}</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% if order.status == 'paid' %}
+    <p class="done">已支付成功。现在可以回到 QSM368ZP 收银台查看订单状态。</p>
+    <p><a class="primary" href="/dashboard">返回云端后台</a></p>
+  {% else %}
+    <form method="post" action="/pay/{{ order.cloud_order_id }}/success" style="margin:24px 0;">
+      <button
+        class="primary"
+        type="submit"
+        style="font-size:28px; padding:22px 34px; min-width:260px; min-height:76px; position:relative; z-index:2; cursor:pointer;"
+      >模拟支付成功</button>
+    </form>
+    <p style="font-size:18px; margin-top:18px;">
+      如果按钮无效，
+      <a href="/pay/{{ order.cloud_order_id }}/success">点击这里完成支付</a>
+    </p>
+  {% endif %}
+</section>
+{% endblock %}

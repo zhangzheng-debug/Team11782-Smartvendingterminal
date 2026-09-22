@@ -1,80 +1,19 @@
-# Testing / 测试说明
+# 测试说明
 
-## 基础 API
+## 自动测试
 
-```sh
-python3 tools/api_smoke_test.py
-wget -qO- http://127.0.0.1:5000/api/state | head -c 1500
-```
+自动测试覆盖扫码字段兼容、多 SKU、购物车、拍照冷却、输入仲裁、音频事件和 RKNN CLI 后端。它们需要在板端运行时环境下执行，部分测试依赖摄像头、音频卡或 RKNN runtime。
 
-## 收银业务
+## 现场验收
 
-```sh
-python3 tools/scan_api_matrix_test.py
-python3 tools/qml_business_api_test.py
-python3 tools/input_arbitration_api_test.py
-```
+自动测试通过后仍需人工确认：
 
-覆盖点：
+- HDMI 上 QML 窗口可见且布局完整；
+- 扫码枪插在已验证 USB Host 口；
+- 摄像头能拍照并显示预览；
+- HyperX/USB 声卡能播放和录音；
+- 云支付演示页能从手机访问并回写 `paid`，或清晰显示本地 fallback。
 
-- SKU001 到 SKU010 可扫码加购
-- 未知条码有明确反馈
-- 语音输入框中输入 SKU/条码时优先走扫码
-- 购物车、总价、删除、清空、结账状态正确
+## 证据原则
 
-## 拍照与视觉
-
-```sh
-python3 tools/capture_stress_test.py
-python3 tools/vision_model_status_test.py
-python3 tools/vision_predict_smoke_test.py
-python3 tools/vision_scan_verify_test.py
-python3 tools/vision_no_repeat_add_test.py
-python3 tools/rknn_cli_smoke_test.py
-python3 tools/vision_rknn_cli_backend_test.py
-```
-
-覆盖点：
-
-- 拍照互斥、冷却、超时和清理策略稳定
-- `active_backend=rknn_cli`
-- 视觉结果只做辅助校验，不重复加购
-
-## 音频与语音播报
-
-```sh
-python3 tools/audio_asset_audit.py
-python3 tools/audio_event_matrix_test.py
-```
-
-人工确认：
-
-- 扫码成功有播报
-- 未知商品有播报
-- 拍照开始/成功/失败有播报
-- 结账和支付成功有播报
-- 音频设备异常时主业务不崩溃
-
-## 云支付
-
-```sh
-python3 tools/cloud_payment_probe.py --base http://127.0.0.1:5000 --create-test-order
-python3 tools/payment_phone_first_cloud_test.py
-```
-
-验收点：
-
-- checkout 生成 `cloud_pay_url`
-- 手机可打开云端支付页
-- 模拟支付后云端订单 paid
-- 板端订单同步 paid
-- QML 显示 paid
-- 触发 `payment_success` 播报
-
-## 最小提交前检查
-
-```powershell
-python -m py_compile app.py terminal_kiosk.py tools/api_smoke_test.py tools/scan_api_matrix_test.py tools/qml_business_api_test.py
-git status --short
-```
-
+每项证据记录命令、时间、环境、结果和限制。不要把“进程存在”写成“屏幕可见”，也不要把仿真支付写成真实商户支付。

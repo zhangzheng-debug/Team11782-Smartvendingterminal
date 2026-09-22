@@ -23,7 +23,7 @@
 云支付需要板端能访问：
 
 ```text
-http://139.59.102.178:8000/health
+http://<payment-host>:8000/health
 ```
 
 Windows ICS/NAT 不稳定时，优先换真实路由器 LAN 口给板端上网。

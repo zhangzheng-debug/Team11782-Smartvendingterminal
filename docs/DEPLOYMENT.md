@@ -1,82 +1,31 @@
-# Deployment / 部署说明
+# 部署说明
 
-## 安全边界
+## 板端应用层部署
 
-本项目的板端部署只需要应用层文件和 `/userdata/qt5` runtime。不要执行以下操作：
+1. 确认 ADB 输出中设备状态为 `device`。
+2. 备份 `/userdata/smart_retail`。
+3. 仅部署应用目录、QML 和 `/userdata` 启动脚本。
+4. 运行 `start_retail_hdmi_qml.sh`。
+5. 用 `/api/state`、HDMI、扫码枪和摄像头做验收。
 
-- 不刷机
-- 不执行 RKDevTool Upgrade 或 EraseFlash
-- 不写 boot/rootfs/oem/uboot
-- 不覆盖现场数据库
-- 不修改 `/etc/init.d/S03weston`
+本项目不需要刷写 boot、rootfs、oem、uboot，也不需要 RKDevTool Upgrade/EraseFlash。
 
-## 板端目录
+## 云端演示服务
 
-推荐目录：
+`cloud_payment_service/` 是独立的 Flask/Gunicorn 演示支付服务。生产化部署应使用 HTTPS 反向代理、域名、签名验签、回调幂等、鉴权和密钥管理。不要把真实支付凭据放入仓库。
 
-```text
-/userdata/smart_retail
-/userdata/qt5
-```
+## 板端切换云地址
 
-`/userdata/smart_retail` 放置本仓库应用代码。
-
-`/userdata/qt5` 放置 Qt/QML runtime、字体、Weston HDMI primary 配置和启动日志。
-
-## ADB 部署参考
-
-Windows PowerShell：
-
-```powershell
-$ADB="C:\Users\MR\Downloads\tool\tool\RKDevTool_Release_v2.92\RKDevTool_Release_v2.92\bin\adb.exe"
-& $ADB devices -l
-```
-
-部署前建议先备份：
-
-```powershell
-$TS=Get-Date -Format "yyyyMMdd_HHmmss"
-$BACKUP="C:\Users\MR\Desktop\backup_smart_retail_$TS"
-New-Item -ItemType Directory -Force $BACKUP | Out-Null
-& $ADB pull /userdata/smart_retail "$BACKUP\smart_retail"
-```
-
-## 启动与回滚
-
-启动 QML：
+板端已有状态配置接口，切换前先备份并确认新服务 `/health`：
 
 ```sh
-sh /userdata/start_retail_hdmi_qml.sh
+cd /userdata/smart_retail
+python3 - <<'PY'
+from app import get_cloud_base_url, set_cloud_base_url
+set_cloud_base_url("http://payment-host:8000")
+print(get_cloud_base_url())
+PY
+wget -qO- http://127.0.0.1:5000/api/cloud/status
 ```
 
-恢复默认 Weston：
-
-```sh
-sh /userdata/restore_default_weston.sh
-```
-
-日志位置：
-
-```text
-/userdata/qt5/kiosk_launcher_logs/start_hdmi_qml_latest.log
-/userdata/qt5/main_qml.log
-/userdata/smart_retail/app.log
-/tmp/weston.log
-```
-
-## 网络与云支付
-
-若使用 Windows ICS/NAT：
-
-- Windows 有线口建议为 `192.168.137.1`
-- 板端 `eth0` 可设为 `192.168.137.191/24`
-- 默认路由为 `192.168.137.1`
-
-板端测试：
-
-```sh
-wget -S -O- http://139.59.102.178:8000/health 2>&1 | head -100
-```
-
-只有板端能访问云端 health 时，手机扫码云支付链路才适合做最终演示。
-
+示例地址必须替换为现场实际的 HTTPS 或局域网地址。

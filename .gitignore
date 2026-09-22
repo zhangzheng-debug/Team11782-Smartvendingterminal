@@ -1,46 +1,57 @@
-# Python
+# Python and local development
 __pycache__/
 *.py[cod]
 .pytest_cache/
 .venv/
 venv/
+.env
 
-# Runtime logs
-*.log
-logs/
-kiosk_launcher_logs/
-
-# Local databases and backups
+# Runtime data and secrets
 *.db
 *.sqlite
 *.sqlite3
 database/*.db
 database/*.sqlite*
 checkpoints/
+backups/
 backup*/
+*.pem
+*.key
+id_rsa*
+id_ed25519*
 
-# Local device and deployment outputs
+# Device/runtime outputs
+*.log
+logs/
+kiosk_launcher_logs/
+captures/
+static/captures/
+static/qrcodes/
+static/audio_backup*/
+static/audio_tts_generated*/
 adb_push_tmp/
 pydeps/
 build/
 dist/
 
-# Large raw datasets
+# Large private datasets and model/build caches
 dataset_raw*/
 raw_images/
-captures/
-static/captures/
+runs/
+wheelhouse*/
+release_*/
+report_input_package_for_chatgpt_staging/
+field_rehearsal_logs/
+evidence_final/
+*.raw
+*.pt
+*.onnx
+*.rknn
+*.tar.gz
+*.zip
 
 # OS/editor
 .DS_Store
 Thumbs.db
 .vscode/
 .idea/
-
-# Secrets
-*.pem
-*.key
-id_rsa*
-id_ed25519*
-.env
-

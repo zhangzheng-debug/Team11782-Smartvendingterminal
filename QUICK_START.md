@@ -57,7 +57,7 @@ wget -qO- http://127.0.0.1:5000/api/state | head -c 1200
 - 扫码枪插在已验证 USB Host 口
 - HyperX Cloud III 或 USB 声卡在 `aplay -l` 和 `arecord -l` 中可见
 - 摄像头在 `/dev/video*` 中可见
-- 如需云支付，板端必须能访问 `http://139.59.102.178:8000/health`
+- 如需云支付，板端必须能访问 `http://<payment-host>:8000/health`
 
 ## 4. 演示流程
 

@@ -1,0 +1,20 @@
+
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{% block title %}云端支付服务{% endblock %}</title>
+<style>
+body{margin:0;background:#f1f5f9;color:#0f172a;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",Arial,sans-serif}
+header{background:#0f172a;color:white;padding:22px 30px}header h1{margin:0}header a{color:#dbeafe;margin-right:16px}
+main{padding:18px}.card{background:white;border-radius:16px;padding:20px;margin-bottom:16px;box-shadow:0 6px 22px rgba(15,23,42,.08)}
+table{width:100%;border-collapse:collapse}td,th{border-bottom:1px solid #e2e8f0;padding:10px;text-align:left}.tag{background:#eef2ff;color:#3730a3;border-radius:999px;padding:3px 8px}.pay{max-width:720px;margin:20px auto}.amount{font-size:36px;font-weight:800}.primary{background:#2563eb;color:white;border:0;border-radius:12px;padding:14px 20px;font-size:18px;font-weight:700}
+.done{background:#dcfce7;color:#166534;padding:15px;border-radius:12px}
+</style>
+</head>
+<body>
+<header><h1>QSM368ZP 云端支付模拟服务</h1><p><a href="/dashboard">Dashboard</a><a href="/health">Health</a><a href="/export/orders.csv">导出订单</a></p></header>
+<main>{% block content %}{% endblock %}</main>
+</body>
+</html>

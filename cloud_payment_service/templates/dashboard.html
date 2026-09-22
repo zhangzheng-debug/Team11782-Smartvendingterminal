@@ -1,0 +1,30 @@
+
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <h2>云端订单统计</h2>
+  <p>订单数：<b>{{ total.n }}</b> ｜ 总金额：<b>{{ money(total.amount) }}</b> ｜ 已支付：<b>{{ paid.n }}</b> ｜ 已支付金额：<b>{{ money(paid.amount) }}</b></p>
+</section>
+<section class="card">
+  <h2>云端订单</h2>
+  <table>
+    <thead><tr><th>云端订单</th><th>本地订单</th><th>终端</th><th>金额</th><th>状态</th><th>创建</th><th>支付</th><th>操作</th></tr></thead>
+    <tbody>
+    {% for o in orders %}
+      <tr><td>{{ o.cloud_order_id }}</td><td>{{ o.local_order_id }}</td><td>{{ o.terminal_id }}</td><td>{{ money(o.total_price_cent) }}</td><td>{{ o.status }}</td><td>{{ o.created_at }}</td><td>{{ o.paid_at or '-' }}</td><td><a href="/pay/{{ o.cloud_order_id }}">支付页</a></td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</section>
+<section class="card">
+  <h2>云端事件</h2>
+  <table>
+    <thead><tr><th>时间</th><th>云端订单</th><th>事件</th><th>状态</th><th>信息</th></tr></thead>
+    <tbody>
+    {% for e in events %}
+      <tr><td>{{ e.created_at }}</td><td>{{ e.cloud_order_id }}</td><td>{{ e.event_type }}</td><td>{{ e.status }}</td><td>{{ e.message }}</td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</section>
+{% endblock %}

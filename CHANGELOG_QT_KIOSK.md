@@ -836,3 +836,12 @@
 - Board validation: audio event matrix `24/24 PASS`, including the missing-device negative case; capture preview stability `5/5 PASS`; RKNN CLI smoke `PASS`; unknown barcode returned a stable JSON error and did not change the cart.
 - Current board evidence: HDMI `connected`, HyperX Cloud III enumerated as ALSA card `2 [III]`, `active_backend=rknn_cli`, `/userdata` approximately 251 MB free.
 - Remaining field conditions are explicit rather than masked: board RTC is `2000-01-01`, `eth0` is `NO-CARRIER` until the network cable is connected, and scanner HID must be checked with the scanner physically attached. No database overwrite, flashing, RKDevTool, boot/rootfs write or autostart change was performed.
+
+# 2026-09-22 板端 RTC 校时与现场设备复核
+
+- Set the board system clock to `2026-09-22 14:40:25 UTC` and wrote it to `/dev/rtc0` with `hwclock -w -u`.
+- Verified the clock after the write and captured a fresh image `capture_20260922_144128_477.jpg`; application timestamps now use the current date instead of `2000-01-01`.
+- Capture cleanup removed 32 old files during the verification run; capture storage decreased from about 9.18 MB to about 3.53 MB. The cart was not cleared or rewritten.
+- HyperX Cloud III remains ALSA card `2 [III]`; HDMI remains connected; Flask, Weston and QML remain running.
+- The scanner was still absent from `/proc/bus/input/devices` and USB enumeration in this check. Only the USB mouse and HyperX input interfaces were visible, so scanner HID acceptance remains a physical-port/power/USB enumeration check, not a QML code failure.
+- Cloud/network testing is intentionally deferred while the Ethernet cable is not being debugged.

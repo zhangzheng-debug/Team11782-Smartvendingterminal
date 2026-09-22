@@ -827,3 +827,12 @@
 - Deployed only `app.py` to the board after backing up the application, QML files and database. No database rows were cleared or overwritten.
 - Board validation: `/api/capture` returned `ok=true` with a fresh JPEG; `POST /api/vision/candidates {"capture":true}` returned a fresh capture, `backend=rknn_cli`, and `auto_add_cart=false`; cart remained unchanged.
 - Board field limitations at this check: scanner and HyperX USB devices were not enumerated, Ethernet had `NO-CARRIER`, and board system time remained `2000-01-01`.
+
+# 2026-09-22 板端潜在问题审计与音频状态诚实化
+
+- Added `audio_device_available()` and an early ALSA card check before asynchronous `aplay` starts. A missing configured card now reports `audio_ok=false` and `audio device unavailable` without failing the main business action.
+- Added `tools/test_audio_device_guard.py` covering named cards, numeric cards, missing cards and host environments without `/proc/asound`.
+- Restarted the running Flask process after deployment so the board loaded the new Python code; Weston, QML, database and launcher configuration were preserved.
+- Board validation: audio event matrix `24/24 PASS`, including the missing-device negative case; capture preview stability `5/5 PASS`; RKNN CLI smoke `PASS`; unknown barcode returned a stable JSON error and did not change the cart.
+- Current board evidence: HDMI `connected`, HyperX Cloud III enumerated as ALSA card `2 [III]`, `active_backend=rknn_cli`, `/userdata` approximately 251 MB free.
+- Remaining field conditions are explicit rather than masked: board RTC is `2000-01-01`, `eth0` is `NO-CARRIER` until the network cable is connected, and scanner HID must be checked with the scanner physically attached. No database overwrite, flashing, RKDevTool, boot/rootfs write or autostart change was performed.

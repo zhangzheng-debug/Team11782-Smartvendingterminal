@@ -196,6 +196,45 @@ def set_audio_devices(output_device=None, input_device=None):
     if input_device:
         set_state("audio_input_device", input_device.strip())
 
+
+def audio_device_available(device, proc_asound=Path("/proc/asound")):
+    """Return whether a concrete ALSA card is currently enumerated.
+
+    Host-side tests do not have /proc/asound, so they keep the historical
+    optimistic behavior. On the board, concrete ``hw``/``plughw`` devices
+    are checked before spawning aplay; this prevents async playback from
+    being reported as successful when the configured USB card is absent.
+    """
+    text = str(device or "").strip()
+    if not text:
+        return False
+    if text.startswith(("default", "pulse", "sysdefault")):
+        return True
+    proc_asound = Path(proc_asound)
+    if not proc_asound.exists():
+        return True
+
+    card = ""
+    if "CARD=" in text:
+        card = text.split("CARD=", 1)[1].split(",", 1)[0].strip()
+    elif text.startswith(("plughw:", "hw:")):
+        card = text.split(":", 1)[1].split(",", 1)[0].strip()
+    if not card:
+        return True
+
+    cards_file = proc_asound / "cards"
+    try:
+        cards_text = cards_file.read_text(encoding="utf-8", errors="ignore") if cards_file.exists() else ""
+    except OSError:
+        cards_text = ""
+    if re.search(rf"\[\s*{re.escape(card)}\s*\]", cards_text):
+        return True
+    if card.isdigit() and (proc_asound / f"card{card}").exists():
+        return True
+    if not card.isdigit() and (proc_asound / card).exists():
+        return True
+    return False
+
 AUDIO_EVENTS = {
     "system_ready": "system_ready.wav",
     "scan_success": "scan_success.wav",
@@ -257,6 +296,11 @@ def play_audio(event_key_or_file, wait=False):
     if not path.exists():
         log_audio(event_key_or_file, str(path), device, "", "play", 0, 0, "audio file not found")
         set_latest_audio_status(event_key_or_file, "play", False, "audio file not found", device, 0, str(path))
+        return False
+    if not audio_device_available(device):
+        message = f"audio device unavailable: {device}"
+        log_audio(event_key_or_file, str(path), device, "", "play", 0, 0, message)
+        set_latest_audio_status(event_key_or_file, "play", False, message, device, 0, str(path))
         return False
     cmd = ["aplay", "-D", device, str(path)]
     try:

@@ -1,0 +1,119 @@
+{
+  "audit": "bisheng_cup_preliminary",
+  "mode": "offline_files_only",
+  "root": "C:\\Users\\MR\\AppData\\Local\\Temp\\Team11782-Smartvendingterminal-remote-20260922",
+  "required_files_pass": true,
+  "required_files": [
+    {
+      "path": "README.md",
+      "exists": true,
+      "required": true
+    },
+    {
+      "path": "app.py",
+      "exists": true,
+      "required": true
+    },
+    {
+      "path": "qt_kiosk/Main.qml",
+      "exists": true,
+      "required": true
+    },
+    {
+      "path": "V263_LIMITATIONS_HONEST_LIST.md",
+      "exists": true,
+      "required": true
+    },
+    {
+      "path": "tools/scan_api_matrix_test.py",
+      "exists": true,
+      "required": true
+    },
+    {
+      "path": "tools/qml_business_api_test.py",
+      "exists": true,
+      "required": true
+    },
+    {
+      "path": "tools/rknn_cli_smoke_test.py",
+      "exists": true,
+      "required": true
+    },
+    {
+      "path": "docs/competition/BISHENG_CUP_DESIGN_REPORT_DRAFT.md",
+      "exists": true,
+      "required": true
+    },
+    {
+      "path": "docs/competition/BISHENG_CUP_REQUIREMENTS_EVIDENCE_MATRIX.md",
+      "exists": true,
+      "required": true
+    },
+    {
+      "path": "docs/competition/BISHENG_CUP_PRELIMINARY_DEMO_SCRIPT.md",
+      "exists": true,
+      "required": true
+    },
+    {
+      "path": "docs/competition/BISHENG_CUP_MATERIALS_GAP_LIST.md",
+      "exists": true,
+      "required": true
+    },
+    {
+      "path": "10-SKU manifest",
+      "alternatives": [
+        "dataset_raw_v260/manifest.csv",
+        "data/10sku_manifest/manifest.csv"
+      ],
+      "exists": true,
+      "present": [
+        "data/10sku_manifest/manifest.csv"
+      ],
+      "required": true
+    },
+    {
+      "path": "dataset report",
+      "alternatives": [
+        "TRAINING_REPORT_V260_YOLOV8N_CLS.md",
+        "data/10sku_manifest/intake_report.md"
+      ],
+      "exists": true,
+      "present": [
+        "data/10sku_manifest/intake_report.md"
+      ],
+      "required": true
+    },
+    {
+      "path": "model evaluation summary",
+      "alternatives": [
+        "EVALUATION_REPORT_V260.md",
+        "model_artifacts/rknn/eval_fp/summary.json"
+      ],
+      "exists": true,
+      "present": [
+        "model_artifacts/rknn/eval_fp/summary.json"
+      ],
+      "required": true
+    }
+  ],
+  "dataset": {
+    "row_count": 10,
+    "unique_product_ids": 10,
+    "unique_barcodes": 10,
+    "total_declared_images": 117,
+    "ten_sku_manifest": true
+  },
+  "claim_guards": {
+    "vision_auto_add_disabled": true,
+    "small_test_set_disclosed": true,
+    "payment_boundary_disclosed": true
+  },
+  "pending_field_evidence": [
+    "赛区统一报告模板与报名页面核对",
+    "本次现场 HDMI/外设/支付照片或视频",
+    "BOM 与成本估算",
+    "干净环境 smoke test",
+    "最终提交包 secrets/个人信息/旧地址扫描"
+  ],
+  "decision": "READY_WITH_PENDING_FIELD_EVIDENCE"
+}

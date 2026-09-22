@@ -35,7 +35,7 @@ USB HID 扫码枪
 | `docs/` | 部署、测试、证据和限制说明 |
 | `BISHENG_CUP_*.md` | 毕昇杯材料准备与项目升级建议 |
 
-大文件、现场数据库、原始训练图片、运行日志、密钥、SDK 和板端运行时包不进入公开仓库。模型可按 `docs/MODEL_ARTIFACTS.md` 中的说明单独获取。
+公开仓库保留了可复核的类别映射和板端部署模型入口；现场数据库、运行日志、密钥、SDK、Qt runtime 和原始训练图片不进入公开仓库。模型边界和复现材料见 `docs/MODEL_ARTIFACTS.md`。
 
 ## 本地快速开始
 
@@ -57,7 +57,7 @@ http://127.0.0.1:5000/api/state
 http://127.0.0.1:5000/health
 ```
 
-本地只启动板端服务时，不需要配置云支付地址；支付流程会显示明确的本地/离线状态。
+本地只启动板端服务时，不需要配置云支付地址；支付流程会显示明确的本地/离线状态。`app.py` 不会自动读取 `.env` 文件，请在 shell 中显式设置环境变量，或通过板端状态配置接口设置地址。
 
 ## 板端启动
 
@@ -77,7 +77,7 @@ ADB 部署脚本默认只用于应用层文件，不涉及 boot/rootfs/oem/uboot
 
 ## 云支付演示服务
 
-云服务目录：`cloud_payment_service/`。Ubuntu 上建议使用 systemd + Gunicorn：
+本工作区中的云服务目录：`cloud_hotfix_v2611a/`；公开仓库整理为 `cloud_payment_service/`。Ubuntu 上建议使用 systemd + Gunicorn：
 
 ```bash
 sudo APP_DIR=/opt/qsm-payment PORT=8000 bash tools/ubuntu_payment_server_bootstrap.sh
@@ -110,6 +110,18 @@ wget -qO- http://127.0.0.1:5000/api/state | head -c 1500
 
 测试脚本分清了三类证据：后端 API 自动测试、板端设备/运行时自检、HDMI/扫码枪/摄像头/耳机的现场人工验收。自动 PASS 不替代肉眼显示和真实 USB 设备验收。
 
+## 毕昇杯初赛定位
+
+本项目采用自拟题目，定位为“基于嵌入式系统的条码及端侧视觉校验的自助收银终端”。初赛材料应围绕真实场景、电子系统实现、创新点、可靠性和成本展开，而不是把功能清单堆成“万能零售平台”。推荐评审路径和当前缺口见：
+
+1. `docs/competition/BISHENG_CUP_PRELIMINARY_ALIGNMENT.md`
+2. `docs/competition/BISHENG_CUP_DESIGN_REPORT_DRAFT.md`
+3. `docs/competition/BISHENG_CUP_REQUIREMENTS_EVIDENCE_MATRIX.md`
+4. `docs/competition/BISHENG_CUP_PRELIMINARY_DEMO_SCRIPT.md`
+5. `docs/competition/BISHENG_CUP_MATERIALS_GAP_LIST.md`
+
+当前状态是“作品技术路线匹配，材料仍需按赛区模板整理”，不代表已经通过赛事评审。
+
 ## 毕昇杯评审建议
 
 建议评审按以下顺序看：
@@ -121,7 +133,7 @@ wget -qO- http://127.0.0.1:5000/api/state | head -c 1500
 5. `docs/EVIDENCE.md`
 6. `API_CONTRACT.md` 和 `VISION_API_CONTRACT.md`
 
-演示时应明确说明：扫码负责可靠计价，RKNN/NPU 负责端侧辅助校验；当前 10-SKU 是低样本 baseline，报告必须同时给出样本规模、划分方式、Top-1/Top-3、延迟和失败样例。
+演示时应明确说明：扫码负责可靠计价，RKNN/NPU 负责端侧辅助校验；当前 10-SKU 是 117 张图片、固定 18 张测试集的低样本 baseline，报告必须同时给出划分方式、Top-1/Top-3、延迟和失败样例。当前结果为该测试集 Top-1 94.44%、Top-3 100%，不能外推成真实场景准确率。
 
 ## 安全与公开范围
 

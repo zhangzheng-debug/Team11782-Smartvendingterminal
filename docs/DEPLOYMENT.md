@@ -12,7 +12,7 @@
 
 ## 云端演示服务
 
-`cloud_payment_service/` 是独立的 Flask/Gunicorn 演示支付服务。生产化部署应使用 HTTPS 反向代理、域名、签名验签、回调幂等、鉴权和密钥管理。不要把真实支付凭据放入仓库。
+`cloud_hotfix_v2611a/` 是本工作区的独立 Flask/Gunicorn 演示支付服务，公开仓库整理为 `cloud_payment_service/`。生产化部署应使用 HTTPS 反向代理、域名、签名验签、回调幂等、鉴权和密钥管理。不要把真实支付凭据放入仓库。
 
 ## 板端切换云地址
 

@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 import shutil
 import tempfile
+import time
 import unittest
 from unittest.mock import patch
 
@@ -65,6 +66,19 @@ class UnknownCaptureTest(unittest.TestCase):
                 self.assertEqual(data["top1_product_id"], "")
                 predict.assert_not_called()
                 self.assertEqual(json.loads(self.module.get_state("latest_vision"))["candidates"], [])
+
+    def test_future_capture_timestamp_does_not_lock_camera(self):
+        """A board clock reset must not turn an old future timestamp into cooldown."""
+        self.module.set_state("last_capture_epoch", str(time.time() + 86400))
+        self.module.capture_image = lambda: {
+            "ok": True,
+            "rel_path": "captures/fresh_after_clock_reset.jpg",
+            "latency_ms": 4,
+        }
+        response = self.client.post("/api/capture", json={})
+        payload = response.get_json()
+        self.assertTrue(payload.get("ok"), payload)
+        self.assertEqual(payload.get("image_path"), "captures/fresh_after_clock_reset.jpg")
 
     def test_missing_capture_path_is_not_success(self):
         with patch.object(self.module, "api_capture_v265", side_effect=self.capture_response({"ok": True})), \

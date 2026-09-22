@@ -818,3 +818,12 @@
 - Added isolated regression tools `tools/test_unknown_barcode_capture.py` and `tools/test_unknown_barcode_qml.js`.
 - Verified local logic tests: Python 12/12 PASS and Node/QML branch test PASS. These tests use isolated data and doubles; no ADB deployment or live board claim is made.
 - Added the competition revision, field acceptance, BOM and evidence checklists.
+
+# 2026-09-22 板端拍照冷却时钟回拨修复
+
+- Fixed capture cooldown handling when the board RTC is earlier than the persisted last-capture timestamp after reboot.
+- A future timestamp is now treated as clock skew instead of an active cooldown; normal `0 <= elapsed < cooldown` protection remains unchanged.
+- Added a regression test for the future-timestamp case. Local isolated regression is now `13/13 PASS`.
+- Deployed only `app.py` to the board after backing up the application, QML files and database. No database rows were cleared or overwritten.
+- Board validation: `/api/capture` returned `ok=true` with a fresh JPEG; `POST /api/vision/candidates {"capture":true}` returned a fresh capture, `backend=rknn_cli`, and `auto_add_cart=false`; cart remained unchanged.
+- Board field limitations at this check: scanner and HyperX USB devices were not enumerated, Ethernet had `NO-CARRIER`, and board system time remained `2000-01-01`.

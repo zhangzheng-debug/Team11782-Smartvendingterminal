@@ -3439,7 +3439,10 @@ def api_capture_v265():
     try:
         last_epoch = float(get_state("last_capture_epoch", "0") or "0")
         now_epoch = time.time()
-        if (now_epoch - last_epoch) < CAPTURE_COOLDOWN_SECONDS:
+        # A board RTC can boot behind a timestamp persisted by a previous
+        # session. A future timestamp is clock skew, not a recent capture.
+        elapsed_since_last = now_epoch - last_epoch
+        if last_epoch > 0 and 0 <= elapsed_since_last < CAPTURE_COOLDOWN_SECONDS:
             set_capture_status("cooldown", "拍照冷却中，请稍后", "capture_cooldown")
             play_audio("capture_busy")
             stats = capture_storage_stats()

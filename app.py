@@ -3563,20 +3563,49 @@ def api_vision_candidates():
     init_db()
     start = time.time()
     data = request_json()
-    image_path = data.get("image_path") or get_state("latest_capture", "")
+    fresh_capture = data.get("capture") is True
+    cap = {}
+    if fresh_capture:
+        set_latest_vision({"mode": "candidates", "job_status": "capturing",
+                           "result": "capturing", "candidates": [], "auto_add_cart": False})
+        cap = api_capture_v265().get_json(silent=True) or {}
+        if not cap.get("ok") or not cap.get("image_path"):
+            payload = default_vision_payload("candidates", cap.get("message") or "拍照失败，请重试")
+            payload.update({"ok": False, "result": cap.get("error_reason") or "capture_failed",
+                            "error_reason": cap.get("error_reason") or "capture_failed",
+                            "job_status": "capture_failed", "capture": cap,
+                            "image_path": "", "auto_add_cart": False,
+                            "latency_ms": int((time.time() - start) * 1000)})
+            set_latest_vision(payload)
+            return jsonify(payload)
+        # A fresh request must never fall back to a previous product's image.
+        image_path = cap["image_path"]
+    else:
+        image_path = data.get("image_path") or get_state("latest_capture", "")
     predicted = predict_vision_top3(image_path)
     candidates = (predicted.get("candidates") or [])[:max(1, int(data.get("limit", 3) or 3))]
+    real_prediction = bool(predicted.get("ok") and predicted.get("model_available") and candidates)
+    if fresh_capture and not real_prediction:
+        candidates = []
+    top1 = candidates[0] if candidates else {}
     payload = default_vision_payload(
         "candidates",
         predicted.get("message") or "vision candidates returned for manual workflow",
     )
     payload.update({
-        "ok": True,
+        "ok": real_prediction if fresh_capture else True,
         "result": predicted.get("result", "model_unavailable"),
         "model_available": predicted.get("model_available", False),
         "backend": predicted.get("backend", "disabled"),
         "image_path": image_path,
         "candidates": candidates,
+        "capture": cap,
+        "top1_product_id": top1.get("product_id", ""),
+        "top1_name": top1.get("product_name", ""),
+        "confidence": float(top1.get("confidence", 0.0) or 0.0),
+        "error_reason": "" if real_prediction else predicted.get("result", "model_unavailable"),
+        "job_status": "done" if real_prediction else "prediction_unavailable",
+        "auto_add_cart": False,
         "latency_ms": int((time.time() - start) * 1000),
     })
     set_latest_vision(payload)

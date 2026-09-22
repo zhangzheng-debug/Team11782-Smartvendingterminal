@@ -60,6 +60,19 @@ V2.5.17b adds full capture preview fields:
 - `latest_capture_latency_ms`: capture latency
 - `latest_capture_success`: boolean capture result flag
 
+V2.6.11-H adds fresh-capture semantics to `POST /api/vision/candidates`:
+
+```json
+{"capture":true,"limit":3}
+```
+
+With `capture=true`, the endpoint obtains a new image using the existing
+capture lock/cooldown/timeout path. It does not reuse `image_path`, the last
+preview, or `latest_capture` when the new capture fails. Busy, cooldown,
+timeout, missing-file, model-unavailable and prediction-failure responses are
+explicit failures with empty candidates. This endpoint never mutates the cart;
+manual product selection remains a separate action.
+
 V2.6.7 adds wake-word numeric voice-session fields:
 
 - `voice_mode`: `idle`, `command_listening`, `command_executing`, `timeout`, `failed`, or `cancelled`
@@ -1014,7 +1027,7 @@ Order JSON from `POST /api/checkout`, `/api/state.latest_order`, `/api/order/<or
   "payment_qr_content": "http://...",
   "payment_qr_url": "http://127.0.0.1:5000/static/qrcodes/ORDER.png",
   "payment_qr_file_url": "file:///userdata/smart_retail/static/qrcodes/ORDER.png",
-  "cloud_pay_url": "http://<payment-host>:8000/pay/...",
+  "cloud_pay_url": "${CLOUD_PAYMENT_BASE_URL}/pay/...",
   "local_pay_url": "http://127.0.0.1:5000/pay/ORDER...",
   "board_lan_ip": "192.168.x.x",
   "qr_exists": true,
@@ -1037,7 +1050,7 @@ Mode policy:
 {
   "ok": true,
   "cloud_enabled": true,
-  "cloud_base_url": "http://<payment-host>:8000",
+  "cloud_base_url": "${CLOUD_PAYMENT_BASE_URL}",
   "cloud_health_ok": false,
   "error": "network error text",
   "last_checked_at": "2026-06-09 21:53:46"
@@ -1136,7 +1149,7 @@ Order JSON now includes QR and payment URL fields:
   "qr_exists": true,
   "qr_error": "",
   "payment_url_type": "cloud",
-  "preferred_payment_url": "http://<payment-host>:8000/pay/..."
+  "preferred_payment_url": "${CLOUD_PAYMENT_BASE_URL}/pay/..."
 }
 ```
 

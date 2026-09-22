@@ -430,9 +430,14 @@ ApplicationWindow {
                 recentScanStatus = "unknown";
                 recentScanResult = message || ("未录入商品：" + code);
                 recentScanError = recentScanResult;
-                statusMessage = recentScanResult + "，请查看视觉候选";
-                RetailApi.visionCandidates(capturePreviewPath, function(vok, vdata) {
-                    visionMessage = vok ? ("未知条码，已给出视觉候选：" + (vdata.top1_product_id || "-") + "，请确认后加入") : "未知条码候选失败";
+                statusMessage = recentScanResult + "，正在重新拍照";
+                RetailApi.visionCandidates("", true, function(vok, vdata) {
+                    if (vdata && vdata.capture && vdata.capture.ok) {
+                        updateCapturePreview(vdata.capture);
+                    }
+                    visionMessage = vok ? ("未知条码候选：" + (vdata.top1_name || vdata.top1_product_id || "-") + "，核对后点击对应快捷商品加入") :
+                            ("未录入商品，候选获取失败：" + ((vdata && (vdata.message || vdata.error_reason || vdata.error)) || "API 错误") + "；请稍后重试");
+                    statusMessage = visionMessage;
                     refreshNow();
                     ensureScannerFocus();
                 });

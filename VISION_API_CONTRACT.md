@@ -92,6 +92,24 @@ Request:
 
 Returns Top-3 candidates for unknown-barcode or manual-capture workflows. Candidates are suggestions only and do not mutate the cart.
 
+The optional `capture` field controls whether the request must obtain a fresh
+photo before prediction:
+
+```json
+{"capture":true,"limit":3}
+```
+
+When `capture=true`, the server uses the existing capture mutex, cooldown,
+timeout, cleanup and camera error handling. It ignores a supplied or previously
+displayed image path. A busy, cooldown, timeout, missing file, unavailable
+model or failed prediction returns an explicit failure with empty candidates;
+the previous image is never used as a substitute. A successful fresh request
+returns its capture metadata and `auto_add_cart=false`.
+
+When `capture` is omitted or false, legacy diagnostic calls may continue to use
+`image_path` or the latest capture path. This compatibility path does not
+change the rule that candidates never add to the cart.
+
 ## `POST /api/vision/confirm`
 
 Request:

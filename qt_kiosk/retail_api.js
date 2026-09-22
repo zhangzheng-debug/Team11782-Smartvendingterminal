@@ -116,8 +116,12 @@ function visionVerifyScan(barcode, imagePath, capture, callback) {
     apiPost("/api/vision/verify_scan", { barcode: barcode, image_path: imagePath || "", capture: !!capture }, callback);
 }
 
-function visionCandidates(imagePath, callback) {
-    apiPost("/api/vision/candidates", { image_path: imagePath || "", limit: 3 }, callback);
+function visionCandidates(imagePath, capture, callback) {
+    if (typeof capture === "function") {
+        callback = capture;
+        capture = false;
+    }
+    apiPost("/api/vision/candidates", { image_path: imagePath || "", capture: !!capture, limit: 3 }, callback);
 }
 
 function visionConfirm(productId, callback) {
